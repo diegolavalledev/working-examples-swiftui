@@ -2,10 +2,27 @@ import SwiftUI
 
 struct FavoritesTab: View {
 
+  @State var posts: [PostModel]?
+  @EnvironmentObject private var store: DataStore
+
   var body: some View {
     NavigationView {
-      Text("Favorites")
-      .navigationBarTitle("Favorites")
+      Group {
+        if posts == nil {
+          Text("Loading posts…")
+        } else {
+          ScrollView(.vertical) {
+            FavoritePosts(allPosts: posts!)
+          }
+        }
+      }
+      .navigationBarTitle("Favorite posts")
+    }
+    .onAppear {
+      self.store.postsRequest.send("")
+    }
+    .onReceive(store.posts) {
+      self.posts = $0
     }
   }
 }

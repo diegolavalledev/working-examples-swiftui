@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		623A62DE23FAF39C002ED813 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623A62DD23FAF39C002ED813 /* ShareSheet.swift */; };
+		623C866D240D4BE300AD78C2 /* FavoritePosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623C866C240D4BE300AD78C2 /* FavoritePosts.swift */; };
+		623C866F240D566D00AD78C2 /* ExampleSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623C866E240D566D00AD78C2 /* ExampleSummary.swift */; };
+		623C8671240D5FE600AD78C2 /* Examples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623C8670240D5FE500AD78C2 /* Examples.swift */; };
 		624ECD6123F6EA170068D139 /* WorkingExamples in Frameworks */ = {isa = PBXBuildFile; productRef = 624ECD6023F6EA170068D139 /* WorkingExamples */; };
 		624ECD6323F6F55F0068D139 /* WorkingExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624ECD6223F6F55F0068D139 /* WorkingExample.swift */; };
 		6253CF2423FEAF4B00538F8C /* PostsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6253CF2323FEAF0200538F8C /* PostsTab.swift */; };
@@ -34,6 +37,9 @@
 
 /* Begin PBXFileReference section */
 		623A62DD23FAF39C002ED813 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
+		623C866C240D4BE300AD78C2 /* FavoritePosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePosts.swift; sourceTree = "<group>"; };
+		623C866E240D566D00AD78C2 /* ExampleSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleSummary.swift; sourceTree = "<group>"; };
+		623C8670240D5FE500AD78C2 /* Examples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Examples.swift; sourceTree = "<group>"; };
 		624ECD6223F6F55F0068D139 /* WorkingExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingExample.swift; sourceTree = "<group>"; };
 		6253CF2323FEAF0200538F8C /* PostsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTab.swift; sourceTree = "<group>"; };
 		6253CF2523FECF9D00538F8C /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
@@ -157,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				628A938224095B370019866C /* FavoritesTab.swift */,
+				623C866C240D4BE300AD78C2 /* FavoritePosts.swift */,
 			);
 			path = favorites;
 			sourceTree = "<group>";
@@ -165,6 +172,8 @@
 			isa = PBXGroup;
 			children = (
 				628A93862409764D0019866C /* ExamplesTab.swift */,
+				623C8670240D5FE500AD78C2 /* Examples.swift */,
+				623C866E240D566D00AD78C2 /* ExampleSummary.swift */,
 			);
 			path = examples;
 			sourceTree = "<group>";
@@ -319,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6285045023BDFB1000A63C32 /* AppDelegate.swift in Sources */,
+				623C8671240D5FE600AD78C2 /* Examples.swift in Sources */,
 				628A938324095B3B0019866C /* FavoritesTab.swift in Sources */,
 				6253CF2C23FEDF6C00538F8C /* FeaturedPost.swift in Sources */,
 				6253CF2423FEAF4B00538F8C /* PostsTab.swift in Sources */,
@@ -331,11 +341,13 @@
 				6285045223BDFB1000A63C32 /* SceneDelegate.swift in Sources */,
 				628A9387240977350019866C /* ExamplesTab.swift in Sources */,
 				6253CF3223FEFF6200538F8C /* FeatureImage.swift in Sources */,
+				623C866D240D4BE300AD78C2 /* FavoritePosts.swift in Sources */,
 				629A437923F45B2D0013EDD0 /* Posts.swift in Sources */,
 				6285045423BDFB1000A63C32 /* Home.swift in Sources */,
 				623A62DE23FAF39C002ED813 /* ShareSheet.swift in Sources */,
 				628A938124095AE40019866C /* SearchTab.swift in Sources */,
 				6253CF3023FEF5AC00538F8C /* Image.swift in Sources */,
+				623C866F240D566D00AD78C2 /* ExampleSummary.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -2,13 +2,22 @@ import SwiftUI
 
 struct Posts: View {
 
+  var byTag: String?
   var posts: [PostModel]
+
+  var filteredPosts: [PostModel] {
+    guard let tag = byTag else {
+      return posts
+    }
+    return posts.filter { $0.params.tags.contains(tag) }
+  }
 
   var body: some View {
     VStack {
-      ForEach(posts) {
+      ForEach(filteredPosts) {
         PostSummary(post: $0)
       }
+      Spacer()
     }
   }
 }

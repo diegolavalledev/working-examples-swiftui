@@ -14,17 +14,42 @@ struct Post: View {
     return df
   }
 
+  @EnvironmentObject private var store: DataStore
+
+  @State var isFavorite = false
+
+  var isReallyFavorite: Bool {
+    store.favorites.contains(post.slug)
+  }
+
+  func toggleFavorite() -> () {
+    isFavorite.toggle()
+    if !isFavorite && isReallyFavorite {
+      store.favorites.removeAll { $0 == post.slug }
+    } else if isFavorite && !isReallyFavorite {
+      store.favorites.insert(post.slug, at: 0)
+    }
+  }
+
   var body: some View {
     ScrollView(.vertical) {
-      VStack {
+      VStack(alignment: .leading) {
         Text("\(post.date, formatter: dateFormatter)")
-        .font(.caption)
+        .font(.footnote)
+        .foregroundColor(Color("secondaryLabel"))
+
         Text("\(post.title)")
         .font(.title)
-        Image(systemName: "ellipsis.circle.fill")
+
+        HStack {
+          Spacer()
+          Image(systemName: "ellipsis.circle.fill")
+          .foregroundColor(.accentColor)
+        }
         .onTapGesture {
           self.showActionSheet.toggle()
         }
+
         Text("\(post.plainSummary)")
         VStack {
           Button(action: {
@@ -40,17 +65,21 @@ struct Post: View {
             }
             .padding()
           }
-          Button(action: {
-            self.share = false
-            self.showSheet.toggle()
-          }) {
-            HStack {
-              Text("Live example")
-              Spacer()
-              Image(systemName: "hand.draw")
+          
+          if post.params.hasDemo {
+            Button(action: {
+              self.share = false
+              self.showSheet.toggle()
+            }) {
+              HStack {
+                Text("Live example")
+                Spacer()
+                Image(systemName: "hand.draw")
+              }
+              .padding()
             }
-            .padding()
           }
+
           Button(action: {
             UIApplication.shared.open(
               URL(string: "https://github.com/swift-you-and-i/working-examples/tree/master/Sources/WorkingExamples/")!
@@ -64,13 +93,15 @@ struct Post: View {
             .padding()
           }
 
-          Button(action: {
-            // TODO: Add to favorites
-          }) {
+          Button(action: toggleFavorite) {
             HStack {
-              Text("Add to Favorites")
+              if isFavorite {
+                Text("Remove from Favorites")
+              } else {
+                Text("Add to Favorites")
+              }
               Spacer()
-              Image(systemName: "heart")
+              Image(systemName: isFavorite ? "heart.slash" : "heart" )
             }
             .padding()
           }
@@ -90,6 +121,9 @@ struct Post: View {
         Spacer()
       }
       .padding()
+    }
+    .onAppear {
+      self.isFavorite = self.isReallyFavorite
     }
     .actionSheet(isPresented: $showActionSheet) {
       ActionSheet(

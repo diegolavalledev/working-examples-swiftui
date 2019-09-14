@@ -18,8 +18,10 @@ struct PostsTab: View {
           } else {
             if featuredPost != nil {
               FeaturedPost(post: featuredPost!)
+              Divider()
             }
-            Color.gray.frame(height: 1).padding(.vertical)
+            Text("All posts")
+            .font(.title)
             Posts(posts: posts!)
           }
           Spacer()

@@ -2,6 +2,27 @@ import Foundation
 import Combine
 
 class DataStore: ObservableObject {
+
+  enum DefaultKeys: String {
+    case favoritePosts = "posts.favorites"
+  }
+
+  var favorites: [String] {
+    get {
+      guard let favorites = UserDefaults.standard.stringArray(forKey: DefaultKeys.favoritePosts.rawValue) else {
+        return []
+      }
+      return favorites
+    }
+    
+    set {
+      UserDefaults.standard.set(
+        newValue,
+        forKey: DefaultKeys.favoritePosts.rawValue
+      )
+      UserDefaults.standard.synchronize()
+    }
+  }
   
   var postsRequest = PassthroughSubject<String, APIError>()
 

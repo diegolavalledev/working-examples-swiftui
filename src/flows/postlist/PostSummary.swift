@@ -12,18 +12,16 @@ struct PostSummary: View {
 
   var body: some View {
     VStack(alignment: .leading) {
-      HStack {
-        Text("\(post.title)")
-        .font(.title)
-        .fixedSize(horizontal: false, vertical: true)
-        .layoutPriority(-1)
-        Spacer()
-        Text("\(post.date, formatter: dateFormatter)")
-        .font(.caption)
-      }
+      Text("\(post.date, formatter: dateFormatter)")
+      .font(.footnote)
+      .foregroundColor(Color("secondaryLabel"))
+
+      Text("\(post.title)")
+      .font(.title)
+      .fixedSize(horizontal: false, vertical: true)
+      .layoutPriority(-1)
       Text("\(post.plainSummary)")
       .lineLimit(1)
-      //.padding()
       NavigationLink("Details", destination: Post(post: post))
       .frame(maxWidth: .infinity, alignment: .trailing)
     }
