@@ -5,16 +5,17 @@ struct Home: View {
   var store = DataStore()
 
   var body: some View {
-    NavigationView {
-      VStack(spacing: 20) {
-        Text("by Diego Lavalle").italic()
-          .font(.headline)
-          .frame(maxWidth: .infinity, alignment: .trailing)
-          .padding(.horizontal)
-        Posts()
-        Spacer()
+    TabView {
+      HomeTab()
+      .tabItem {
+        Image(systemName: "star")
+        Text("Featured")
       }
-      .navigationBarTitle("Swift You and I")
+      PostsTab()
+      .tabItem {
+        Image(systemName: "square.stack.fill")
+        Text("Posts")
+      }
     }
     .environmentObject(store)
   }

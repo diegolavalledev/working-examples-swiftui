@@ -7,10 +7,14 @@ struct WorkingExample: View, Identifiable {
 
   var body: some View {
     Group {
-      if id == "/posts/no-uiimage/" {
-        ImprovedPlaneMoonScene()
-      } else if id == "/posts/combine-form-validation/" {
+      if id == "no-uiimage" {
+        EmptyView()
+      } else if id == "combine-form-validation" {
         SignUpForm()
+      } else if id == "animation-ended" {
+        ImprovedPlaneMoonScene()
+      } else if id == "scroll-magic" {
+        JumpingTitleBar()
       } else {
         Text("This post does yet not provide a working example.")
       }
@@ -20,6 +24,6 @@ struct WorkingExample: View, Identifiable {
 
 struct WorkingExample_Previews: PreviewProvider {
   static var previews: some View {
-    WorkingExample(id: "/posts/no-uiimage/")
+    WorkingExample(id: "no-uiimage")
   }
 }

@@ -4,7 +4,8 @@ import SwiftUIWorkingExamples
 struct Post: View {
 
   var post: PostModel
-  @State var workingExample: WorkingExample?
+  @State var showSheet = false
+  @State var share = false
 
   private var dateFormatter: DateFormatter {
     let df = DateFormatter()
@@ -27,7 +28,8 @@ struct Post: View {
           )
         }
         Button("Working Example") {
-          self.workingExample = WorkingExample(id: self.post.relPermalink)
+          self.share = false
+          self.showSheet.toggle()
         }
         Button("Source Code") {
           UIApplication.shared.open(
@@ -35,9 +37,24 @@ struct Post: View {
           )
         }
       }
+      Button(action: {
+        self.share = true
+        self.showSheet.toggle()
+      }) {
+        Image(systemName: "square.and.arrow.up")
+        Text("Share")
+      }
     }
-    .sheet(item: $workingExample) {workingExample in
-      workingExample
+    .sheet(isPresented: $showSheet) {
+      if self.share {
+        ShareSheet(activityItems: [
+          URL(string: self.post.permalink)!,
+          Image(systemName: "paperclip"),
+          self.post.title
+        ])
+      } else {
+        WorkingExample(id: self.post.slug)
+      }
     }
   }
 }
