@@ -5,6 +5,7 @@ struct Post: View {
 
   var post: PostModel
   @State var showSheet = false
+  @State var showActionSheet = false
   @State var share = false
 
   private var dateFormatter: DateFormatter {
@@ -14,36 +15,94 @@ struct Post: View {
   }
 
   var body: some View {
-    VStack {
-      Text("\(post.title)")
-      .font(.title)
-      Text("\(post.date, formatter: dateFormatter)")
-      .font(.caption)
-      Text("\(post.plainSummary)")
+    ScrollView(.vertical) {
+      VStack {
+        Text("\(post.date, formatter: dateFormatter)")
+        .font(.caption)
+        Text("\(post.title)")
+        .font(.title)
+        Image(systemName: "ellipsis.circle.fill")
+        .onTapGesture {
+          self.showActionSheet.toggle()
+        }
+        Text("\(post.plainSummary)")
+        VStack {
+          Button(action: {
+            UIApplication.shared.open(
+              URL(string: self.post.permalink)!
+            )
+          }) {
+            HStack {
+              Text("Read online")
+              Spacer()
+              Image(systemName: "safari")
+              // Image(systemName: "book")
+            }
+            .padding()
+          }
+          Button(action: {
+            self.share = false
+            self.showSheet.toggle()
+          }) {
+            HStack {
+              Text("Live example")
+              Spacer()
+              Image(systemName: "hand.draw")
+            }
+            .padding()
+          }
+          Button(action: {
+            UIApplication.shared.open(
+              URL(string: "https://github.com/swift-you-and-i/working-examples/tree/master/Sources/WorkingExamples/")!
+            )
+          }) {
+            HStack {
+              Text("Source code")
+              Spacer()
+              Image(systemName: "chevron.left.slash.chevron.right")
+            }
+            .padding()
+          }
+
+          Button(action: {
+            // TODO: Add to favorites
+          }) {
+            HStack {
+              Text("Add to Favorites")
+              Spacer()
+              Image(systemName: "heart")
+            }
+            .padding()
+          }
+
+          Button(action: {
+            self.share = true
+            self.showSheet.toggle()
+          }) {
+            HStack {
+              Text("Share")
+              Spacer()
+              Image(systemName: "square.and.arrow.up")
+            }
+            .padding()
+          }
+        }
+        Spacer()
+      }
       .padding()
-      HStack {
-        Button("Read online") {
-          UIApplication.shared.open(
-            URL(string: self.post.permalink)!
-          )
-        }
-        Button("Working Example") {
-          self.share = false
-          self.showSheet.toggle()
-        }
-        Button("Source Code") {
-          UIApplication.shared.open(
-            URL(string: "https://github.com/swift-you-and-i/working-examples/tree/master/Sources/WorkingExamples/combine-form-validation")!
-          )
-        }
-      }
-      Button(action: {
-        self.share = true
-        self.showSheet.toggle()
-      }) {
-        Image(systemName: "square.and.arrow.up")
-        Text("Share")
-      }
+    }
+    .actionSheet(isPresented: $showActionSheet) {
+      ActionSheet(
+        title: Text("\(post.title)"),
+        buttons: [
+          .default(Text("Read online")) {
+            UIApplication.shared.open(
+              URL(string: self.post.permalink)!
+            )
+          },
+          .cancel()
+        ]
+      )
     }
     .sheet(isPresented: $showSheet) {
       if self.share {

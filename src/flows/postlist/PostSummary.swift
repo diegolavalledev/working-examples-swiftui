@@ -24,7 +24,7 @@ struct PostSummary: View {
       Text("\(post.plainSummary)")
       .lineLimit(1)
       //.padding()
-      NavigationLink("See post", destination: Post(post: post))
+      NavigationLink("Details", destination: Post(post: post))
       .frame(maxWidth: .infinity, alignment: .trailing)
     }
     .padding()

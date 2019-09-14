@@ -2,17 +2,39 @@ import SwiftUI
 
 struct PostsTab: View {
 
-  var store = DataStore()
+  @State var posts: [PostModel]?
+  @EnvironmentObject private var store: DataStore
+
+  var featuredPost: PostModel? {
+    posts!.first { $0.params.featured }
+  }
 
   var body: some View {
     NavigationView {
-      VStack(spacing: 20) {
-        Posts()
-        Spacer()
+      ScrollView(.vertical) {
+        VStack {
+          if posts == nil {
+            Text("Downloading data…")
+          } else {
+            if featuredPost != nil {
+              FeaturedPost(post: featuredPost!)
+            }
+            Color.gray.frame(height: 1).padding(.vertical)
+            Posts(posts: posts!)
+          }
+          Spacer()
+        }
+        .frame(maxWidth: .infinity)
       }
       .navigationBarTitle("Swift You and I")
     }
-    .environmentObject(store)
+    .onAppear {
+      self.store.postsRequest.send("")
+      // TODO: send the actual request enum
+    }
+    .onReceive(store.posts) {
+      self.posts = $0
+    }
   }
 }
 

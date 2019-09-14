@@ -6,15 +6,25 @@ struct Home: View {
 
   var body: some View {
     TabView {
-      HomeTab()
-      .tabItem {
-        Image(systemName: "star")
-        Text("Featured")
-      }
       PostsTab()
       .tabItem {
         Image(systemName: "square.stack.fill")
         Text("Posts")
+      }
+      ExamplesTab()
+      .tabItem {
+        Image(systemName: "hand.draw.fill")
+        Text("Examples")
+      }
+      FavoritesTab()
+      .tabItem {
+        Image(systemName: "heart.fill")
+        Text("Favorites")
+      }
+      SearchTab()
+      .tabItem {
+        Image(systemName: "magnifyingglass")
+        Text("Search")
       }
     }
     .environmentObject(store)
