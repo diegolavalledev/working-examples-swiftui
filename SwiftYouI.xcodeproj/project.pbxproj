@@ -75,6 +75,8 @@
 		62DE9DDA23F5BB9D00E568BD /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		62EDC0C2241662D3006339BE /* WorkingExamples.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WorkingExamples.entitlements; sourceTree = "<group>"; };
 		62EDC10524193ED9006339BE /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		62FFC86F2420CBFC005DE3E3 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		62FFC8712420CC17005DE3E3 /* gitconfig */ = {isa = PBXFileReference; lastKnownFileType = text; path = gitconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,27 +99,28 @@
 			path = posts;
 			sourceTree = "<group>";
 		};
-		6253CF2A23FEDF1200538F8C /* Config */ = {
+		6253CF2A23FEDF1200538F8C /* conf */ = {
 			isa = PBXGroup;
 			children = (
 				6253CF2523FECF9D00538F8C /* Release.xcconfig */,
 				6253CF2923FEDEF500538F8C /* Debug.xcconfig */,
 				6253CF2823FEDDA100538F8C /* LocalDebug.xcconfig */,
+				62EDC0C2241662D3006339BE /* WorkingExamples.entitlements */,
+				6285045D23BDFB1100A63C32 /* Info.plist */,
 			);
-			path = Config;
+			path = conf;
 			sourceTree = "<group>";
 		};
 		6285044323BDFB1000A63C32 = {
 			isa = PBXGroup;
 			children = (
-				62EDC0C2241662D3006339BE /* WorkingExamples.entitlements */,
 				62A6831023BDFDF300512C76 /* README.md */,
+				62FFC86F2420CBFC005DE3E3 /* LICENSE */,
 				6285044E23BDFB1000A63C32 /* src */,
-				6285044D23BDFB1000A63C32 /* Products */,
-				6285045D23BDFB1100A63C32 /* Info.plist */,
-				6253CF2A23FEDF1200538F8C /* Config */,
+				6253CF2A23FEDF1200538F8C /* conf */,
+				62FFC86E2420CB45005DE3E3 /* conf */,
 				62AB097B24080815004E0C5F /* Settings.bundle */,
-				62A6831123BDFDF300512C76 /* .gitignore */,
+				6285044D23BDFB1000A63C32 /* Products */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -258,6 +261,15 @@
 				623A62DD23FAF39C002ED813 /* ShareSheet.swift */,
 			);
 			path = post;
+			sourceTree = "<group>";
+		};
+		62FFC86E2420CB45005DE3E3 /* conf */ = {
+			isa = PBXGroup;
+			children = (
+				62A6831123BDFDF300512C76 /* .gitignore */,
+				62FFC8712420CC17005DE3E3 /* gitconfig */,
+			);
+			name = conf;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -446,13 +458,13 @@
 			baseConfigurationReference = 6253CF2823FEDDA100538F8C /* LocalDebug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = WorkingExamples.entitlements;
+				CODE_SIGN_ENTITLEMENTS = conf/WorkingExamples.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"src/PreviewContent\"";
 				DEVELOPMENT_TEAM = 92XVGR6M56;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/conf/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -588,13 +600,13 @@
 			baseConfigurationReference = 6253CF2923FEDEF500538F8C /* Debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = WorkingExamples.entitlements;
+				CODE_SIGN_ENTITLEMENTS = conf/WorkingExamples.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"src/PreviewContent\"";
 				DEVELOPMENT_TEAM = 92XVGR6M56;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/conf/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -612,13 +624,13 @@
 			baseConfigurationReference = 6253CF2523FECF9D00538F8C /* Release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = WorkingExamples.entitlements;
+				CODE_SIGN_ENTITLEMENTS = conf/WorkingExamples.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"src/PreviewContent\"";
 				DEVELOPMENT_TEAM = 92XVGR6M56;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/conf/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -661,7 +673,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/swift-you-and-i/working-examples";
 			requirement = {
-				branch = master;
+				branch = develop;
 				kind = branch;
 			};
 		};
