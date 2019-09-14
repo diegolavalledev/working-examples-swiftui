@@ -31,6 +31,10 @@ struct Post: View {
     }
   }
 
+  var postExample: Example! {
+    Example.withPermalink(post.params.example!)
+  }
+
   var body: some View {
     ScrollView(.vertical) {
       VStack(alignment: .leading) {
@@ -147,8 +151,12 @@ struct Post: View {
           self.post.title
         ])
       } else {
-        // TODO: remove this
-        Example.withPermalink(self.post.params.example!)!.view
+        // TODO: replace this with a navigation to the example's summary view
+        if self.postExample == nil {
+          MissingExample()
+        } else {
+          self.postExample.view
+        }
       }
     }
   }

@@ -14,6 +14,10 @@ struct ExampleSummary: View {
     return df
   }
 
+  var liveExample: Example! {
+    Example.withPermalink(self.example.relPermalink)
+  }
+
   var body: some View {
     VStack(alignment: .leading) {
       Text("\(example.date, formatter: dateFormatter)")
@@ -76,7 +80,11 @@ struct ExampleSummary: View {
           self.example.title
         ])
       } else {
-        Example.withPermalink(self.example.relPermalink)?.view
+        if self.liveExample == nil {
+          MissingExample()
+        } else {
+          self.liveExample.view
+        }
       }
     }
   }
