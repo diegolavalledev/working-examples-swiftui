@@ -41,4 +41,22 @@ class DataStore: ObservableObject {
     }
     .eraseToAnyPublisher()
   }
+
+  var examplesRequest = PassthroughSubject<String, APIError>()
+
+  var examples: AnyPublisher<[ExampleModel], Never> {
+    examplesRequest
+    // Trying to prevent a second consequtive request from the View.onAppear()
+    .throttle(for: .seconds(0.5), scheduler: RunLoop.main, latest: true)
+    //.debounce(for: 0.5, scheduler: RunLoop.main)
+    .removeDuplicates()
+    .flatMap { _ in
+      Future { ExampleModel.fetchAll(promise: $0) }
+    }
+    .receive(on: DispatchQueue.main)
+    .catch { e in
+      Optional.Publisher(nil)
+    }
+    .eraseToAnyPublisher()
+  }
 }

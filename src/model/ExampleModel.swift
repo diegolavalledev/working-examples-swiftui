@@ -2,7 +2,7 @@ import Combine
 import Foundation
 import SwiftUI
 
-class PostModel: Codable, Identifiable {
+class ExampleModel: Codable, Identifiable {
 
 #if LOCAL_ENDPOINT
   static var baseUrl = "http://localhost:1313/"
@@ -10,11 +10,11 @@ class PostModel: Codable, Identifiable {
   static var baseUrl = "https://swiftui.diegolavalle.com/"
 #endif
 
-  static var url = URL(string: "\(baseUrl)posts/index.json")!
+  static var url = URL(string: "\(baseUrl)examples/index.json")!
 
   static var cancellable: AnyCancellable?
    
-  static func fetchAll(promise: @escaping (Future<[PostModel], APIError>.Promise)) -> () {
+  static func fetchAll(promise: @escaping (Future<[ExampleModel], APIError>.Promise)) -> () {
     cancellable = URLSession.shared.dataTaskPublisher(for: url)
       .map {$0.data}
       .eraseToAnyPublisher()
@@ -31,7 +31,7 @@ class PostModel: Codable, Identifiable {
         let jsonDecoder = JSONDecoder()
         jsonDecoder.dateDecodingStrategy = .iso8601
         do {
-          let posts = try jsonDecoder.decode([PostModel].self, from: data)
+          let posts = try jsonDecoder.decode([ExampleModel].self, from: data)
           promise(.success(posts))
         } catch {
           print("\(error)")
@@ -45,6 +45,7 @@ class PostModel: Codable, Identifiable {
   }
 
   var title: String
+  var subtitle: String
   var permalink: String
   var relPermalink: String
   var slug: String
@@ -56,11 +57,11 @@ class PostModel: Codable, Identifiable {
   var expiryDate: String
   var plainSummary: String
   var truncated: Bool
-  var params: Params
   var images: [Resource]
 
   private init(
     title: String,
+    subtitle: String,
     permalink: String,
     relPermalink: String,
     slug: String,
@@ -72,10 +73,10 @@ class PostModel: Codable, Identifiable {
     expiryDate: String,
     plainSummary: String,
     truncated: Bool,
-    params: Params,
     images: [Resource]
   ) {
     self.title = title
+    self.subtitle = subtitle
     self.permalink = permalink
     self.relPermalink = relPermalink
     self.slug = slug
@@ -87,14 +88,14 @@ class PostModel: Codable, Identifiable {
     self.expiryDate = expiryDate
     self.plainSummary = plainSummary
     self.truncated = truncated
-    self.params = params
     self.images = images
   }
 
-  static var specimen: PostModel {
-    PostModel(
+  static var specimen: ExampleModel {
+    ExampleModel(
       title: "Hello World",
-      permalink: "https://host.local/posts/hello-world",
+      subtitle: "How are you doing?",
+      permalink: "https://host.local/examples/hello-world",
       relPermalink: "/posts/hello-world",
       slug: "hello-world",
       sectionsPath: "posts",
@@ -108,7 +109,6 @@ class PostModel: Codable, Identifiable {
         World.
       """,
       truncated: true,
-      params: Params(),
       images: []
     )
   }
@@ -117,20 +117,3 @@ class PostModel: Codable, Identifiable {
     images.first(where: {$0.name == "feature"})!
   }
 }
-
-extension PostModel {
-  class Params: Codable {
-    var tags: [String]
-    var twitter: String
-    var featured: Bool
-    var hasDemo: Bool
-
-    init() {
-      tags = []
-      twitter = "@"
-      featured = false
-      hasDemo = false
-    }
-  }
-}
-

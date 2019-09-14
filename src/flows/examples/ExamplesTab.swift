@@ -2,21 +2,17 @@ import SwiftUI
 
 struct ExamplesTab: View {
 
-  @State var posts: [PostModel]?
+  @State var examples: [ExampleModel]!
   @EnvironmentObject private var store: DataStore
-
-  var examplePosts: [PostModel] {
-    posts!.filter { $0.params.hasDemo }
-  }
 
   var body: some View {
     NavigationView {
       Group {
-        if posts == nil {
-          Text("Loading posts…")
+        if examples == nil {
+          Text("Loading examples…")
         } else {
           ScrollView(.vertical) {
-            Examples(posts: examplePosts)
+            Examples(examples: examples)
           }
         }
       }
@@ -29,10 +25,10 @@ struct ExamplesTab: View {
       .padding()
     }
     .onAppear {
-      self.store.postsRequest.send("")
+      self.store.examplesRequest.send("")
     }
-    .onReceive(store.posts) {
-      self.posts = $0
+    .onReceive(store.examples) {
+      self.examples = $0
     }
   }
 }

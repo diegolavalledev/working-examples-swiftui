@@ -3,7 +3,7 @@ import SwiftUIWorkingExamples
 
 struct ExampleSummary: View {
 
-  var post: PostModel
+  var example: ExampleModel
   @State var showSheet = false
   @State var showActionSheet = false
   @State var share = false
@@ -16,13 +16,13 @@ struct ExampleSummary: View {
 
   var body: some View {
     VStack(alignment: .leading) {
-      Text("\(post.date, formatter: dateFormatter)")
+      Text("\(example.date, formatter: dateFormatter)")
       .font(.footnote)
       .foregroundColor(Color("secondaryLabel"))
 
-      Text("\(post.title)")
+      Text("\(example.title)")
       .font(.title)
-      Text("\(post.plainSummary)")
+      Text("\(example.plainSummary)")
       .lineLimit(1)
       HStack {
         Spacer()
@@ -43,7 +43,7 @@ struct ExampleSummary: View {
     }
     .actionSheet(isPresented: $showActionSheet) {
       ActionSheet(
-        title: Text("\(post.title)"),
+        title: Text("\(example.title)"),
         buttons: [
           .default(Text("Live example")) {
             self.share = false
@@ -56,7 +56,7 @@ struct ExampleSummary: View {
           },
           .default(Text("Read post")) {
             UIApplication.shared.open(
-              URL(string: self.post.permalink)!
+              URL(string: self.example.permalink)!
             )
           },
           .default(Text("Share")) {
@@ -70,12 +70,12 @@ struct ExampleSummary: View {
     .sheet(isPresented: $showSheet) {
       if self.share {
         ShareSheet(activityItems: [
-          URL(string: self.post.permalink)!,
+          URL(string: self.example.permalink)!,
           Image(systemName: "paperclip"),
-          self.post.title
+          self.example.title
         ])
       } else {
-        WorkingExample(id: self.post.slug)
+        WorkingExample(id: self.example.slug)
       }
     }
   }
@@ -83,6 +83,6 @@ struct ExampleSummary: View {
 
 struct ExampleSummary_Previews: PreviewProvider {
   static var previews: some View {
-    ExampleSummary(post: PostModel.specimen)
+    ExampleSummary(example: ExampleModel.specimen)
   }
 }

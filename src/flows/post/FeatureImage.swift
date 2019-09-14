@@ -2,12 +2,12 @@ import SwiftUI
 
 struct FeatureImage: View {
 
-  var imageResource: PostModel.Resource
-  var coordinator: PostModel.Resource.Coordinator
+  var imageResource: Resource
+  var coordinator: Resource.Coordinator
 
   @State private var image: Image?
 
-  init(imageResource: PostModel.Resource) {
+  init(imageResource: Resource) {
     self.imageResource = imageResource
     self.coordinator = imageResource.coordinator
   }
@@ -39,6 +39,6 @@ struct FeatureImage: View {
 
 struct FeatureImage_Previews: PreviewProvider {
   static var previews: some View {
-    FeatureImage(imageResource: PostModel.Resource.specimen)
+    FeatureImage(imageResource: Resource.specimen)
   }
 }

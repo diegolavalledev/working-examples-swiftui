@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6229758A241AA62C003E7B90 /* ExampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62297589241AA62C003E7B90 /* ExampleModel.swift */; };
+		6229758C241AA695003E7B90 /* ResourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6229758B241AA694003E7B90 /* ResourceModel.swift */; };
 		623A62DE23FAF39C002ED813 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623A62DD23FAF39C002ED813 /* ShareSheet.swift */; };
 		623C866D240D4BE300AD78C2 /* FavoritePosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623C866C240D4BE300AD78C2 /* FavoritePosts.swift */; };
 		623C866F240D566D00AD78C2 /* ExampleSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623C866E240D566D00AD78C2 /* ExampleSummary.swift */; };
@@ -37,6 +39,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		62297589241AA62C003E7B90 /* ExampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleModel.swift; sourceTree = "<group>"; };
+		6229758B241AA694003E7B90 /* ResourceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceModel.swift; sourceTree = "<group>"; };
 		623A62DD23FAF39C002ED813 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
 		623C866C240D4BE300AD78C2 /* FavoritePosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePosts.swift; sourceTree = "<group>"; };
 		623C866E240D566D00AD78C2 /* ExampleSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleSummary.swift; sourceTree = "<group>"; };
@@ -205,7 +209,9 @@
 			isa = PBXGroup;
 			children = (
 				629A437A23F45B8D0013EDD0 /* PostModel.swift */,
+				62297589241AA62C003E7B90 /* ExampleModel.swift */,
 				6253CF2F23FEF5AC00538F8C /* Image.swift */,
+				6229758B241AA694003E7B90 /* ResourceModel.swift */,
 				62DE9DCA23F5711300E568BD /* APIError.swift */,
 			);
 			path = model;
@@ -343,11 +349,13 @@
 				62DE9DDC23F5BBEB00E568BD /* Post.swift in Sources */,
 				629A437B23F45B8D0013EDD0 /* PostModel.swift in Sources */,
 				629A437F23F464F80013EDD0 /* PostSummary.swift in Sources */,
+				6229758A241AA62C003E7B90 /* ExampleModel.swift in Sources */,
 				6285045223BDFB1000A63C32 /* SceneDelegate.swift in Sources */,
 				628A9387240977350019866C /* ExamplesTab.swift in Sources */,
 				6253CF3223FEFF6200538F8C /* FeatureImage.swift in Sources */,
 				623C866D240D4BE300AD78C2 /* FavoritePosts.swift in Sources */,
 				629A437923F45B2D0013EDD0 /* Posts.swift in Sources */,
+				6229758C241AA695003E7B90 /* ResourceModel.swift in Sources */,
 				62EDC10624193EDA006339BE /* AppConfiguration.swift in Sources */,
 				6285045423BDFB1000A63C32 /* Home.swift in Sources */,
 				623A62DE23FAF39C002ED813 /* ShareSheet.swift in Sources */,
