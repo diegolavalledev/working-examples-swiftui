@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "WorkingExamples",
+        "repositoryURL": "https://github.com/swift-you-and-i/working-examples",
+        "state": {
+          "branch": "master",
+          "revision": "bfa1ef0c34538006b7f664d72369f25c8ce657fc",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
