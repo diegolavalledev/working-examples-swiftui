@@ -73,7 +73,6 @@
 		62AB097B24080815004E0C5F /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		62DE9DCA23F5711300E568BD /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		62DE9DDA23F5BB9D00E568BD /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		62E70121242225D600136837 /* working-examples */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "working-examples"; path = "../working-examples"; sourceTree = "<group>"; };
 		62EDC0C2241662D3006339BE /* WorkingExamples.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WorkingExamples.entitlements; sourceTree = "<group>"; };
 		62EDC10524193ED9006339BE /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		62FFC86F2420CBFC005DE3E3 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -123,7 +122,6 @@
 		6285044323BDFB1000A63C32 = {
 			isa = PBXGroup;
 			children = (
-				62E70121242225D600136837 /* working-examples */,
 				62A6831023BDFDF300512C76 /* README.md */,
 				62FFC86F2420CBFC005DE3E3 /* LICENSE */,
 				6285044E23BDFB1000A63C32 /* src */,
@@ -462,7 +460,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = conf/WorkingExamples.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"src/PreviewContent\"";
 				DEVELOPMENT_TEAM = 92XVGR6M56;
 				ENABLE_PREVIEWS = YES;
@@ -471,7 +469,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.diegolavalle.swiftui.app;
 				PRODUCT_NAME = WorkingExamples;
 				SWIFT_VERSION = 5.0;
@@ -604,7 +602,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = conf/WorkingExamples.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"src/PreviewContent\"";
 				DEVELOPMENT_TEAM = 92XVGR6M56;
 				ENABLE_PREVIEWS = YES;
@@ -613,7 +611,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.diegolavalle.swiftui.app;
 				PRODUCT_NAME = WorkingExamples;
 				SWIFT_VERSION = 5.0;
@@ -628,7 +626,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = conf/WorkingExamples.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"src/PreviewContent\"";
 				DEVELOPMENT_TEAM = 92XVGR6M56;
 				ENABLE_PREVIEWS = YES;
@@ -637,7 +635,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.diegolavalle.swiftui.app;
 				PRODUCT_NAME = WorkingExamples;
 				SWIFT_VERSION = 5.0;
