@@ -25,6 +25,7 @@
 		629A437B23F45B8D0013EDD0 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629A437A23F45B8D0013EDD0 /* PostModel.swift */; };
 		629A437D23F45DC30013EDD0 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629A437C23F45DC30013EDD0 /* DataStore.swift */; };
 		629A437F23F464F80013EDD0 /* PostSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629A437E23F464F80013EDD0 /* PostSummary.swift */; };
+		62AB097D24080A0E004E0C5F /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 62AB097B24080815004E0C5F /* Settings.bundle */; };
 		62DE9DCB23F5711300E568BD /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DE9DCA23F5711300E568BD /* APIError.swift */; };
 		62DE9DDC23F5BBEB00E568BD /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DE9DDA23F5BB9D00E568BD /* Post.swift */; };
 /* End PBXBuildFile section */
@@ -54,6 +55,7 @@
 		629A437E23F464F80013EDD0 /* PostSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSummary.swift; sourceTree = "<group>"; };
 		62A6831023BDFDF300512C76 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		62A6831123BDFDF300512C76 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		62AB097B24080815004E0C5F /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		62DE9DCA23F5711300E568BD /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		62DE9DDA23F5BB9D00E568BD /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,11 +94,12 @@
 		6285044323BDFB1000A63C32 = {
 			isa = PBXGroup;
 			children = (
-				6253CF2A23FEDF1200538F8C /* Config */,
 				62A6831023BDFDF300512C76 /* README.md */,
 				6285044E23BDFB1000A63C32 /* src */,
 				6285044D23BDFB1000A63C32 /* Products */,
 				6285045D23BDFB1100A63C32 /* Info.plist */,
+				6253CF2A23FEDF1200538F8C /* Config */,
+				62AB097B24080815004E0C5F /* Settings.bundle */,
 				62A6831123BDFDF300512C76 /* .gitignore */,
 			);
 			indentWidth = 2;
@@ -255,6 +258,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62AB097D24080A0E004E0C5F /* Settings.bundle in Resources */,
 				6285045C23BDFB1100A63C32 /* LaunchScreen.storyboard in Resources */,
 				6285045923BDFB1100A63C32 /* PreviewAssets.xcassets in Resources */,
 				6285045623BDFB1100A63C32 /* Assets.xcassets in Resources */,
@@ -369,6 +373,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"src/PreviewContent\"";
 				DEVELOPMENT_TEAM = 92XVGR6M56;
 				ENABLE_PREVIEWS = YES;
@@ -377,6 +382,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.diegolavalle.swiftui.app;
 				PRODUCT_NAME = SwiftYouAndI;
 				SWIFT_VERSION = 5.0;
@@ -508,6 +514,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"src/PreviewContent\"";
 				DEVELOPMENT_TEAM = 92XVGR6M56;
 				ENABLE_PREVIEWS = YES;
@@ -516,6 +523,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.diegolavalle.swiftui.app;
 				PRODUCT_NAME = SwiftYouAndI;
 				SWIFT_VERSION = 5.0;
@@ -529,6 +537,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"src/PreviewContent\"";
 				DEVELOPMENT_TEAM = 92XVGR6M56;
 				ENABLE_PREVIEWS = YES;
@@ -537,6 +546,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.diegolavalle.swiftui.app;
 				PRODUCT_NAME = SwiftYouAndI;
 				SWIFT_VERSION = 5.0;
