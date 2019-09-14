@@ -2,26 +2,31 @@ import SwiftUI
 
 struct Home: View {
 
+  @EnvironmentObject var appConfig: AppConfiguration
   var store = DataStore()
 
   var body: some View {
-    TabView {
+    TabView(selection: $appConfig.tab) {
       PostsTab()
+      .tag(AppConfiguration.Tab.posts)
       .tabItem {
         Image(systemName: "square.stack.fill")
         Text("Posts")
       }
       ExamplesTab()
+      .tag(AppConfiguration.Tab.examples)
       .tabItem {
         Image(systemName: "hand.draw.fill")
         Text("Examples")
       }
       FavoritesTab()
+      .tag(AppConfiguration.Tab.favorites)
       .tabItem {
         Image(systemName: "heart.fill")
         Text("Favorites")
       }
       SearchTab()
+      .tag(AppConfiguration.Tab.search)
       .tabItem {
         Image(systemName: "magnifyingglass")
         Text("Search")
@@ -39,5 +44,6 @@ struct Home_Previews: PreviewProvider {
       Home()
       .environment(\.colorScheme, .dark)
     }
+    .environmentObject(AppConfiguration())
   }
 }
