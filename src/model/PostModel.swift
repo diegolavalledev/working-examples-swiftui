@@ -14,7 +14,7 @@ class PostModel: Codable, Identifiable {
 
   static var cancellable: AnyCancellable?
    
-  static func fetchAll2(promise: @escaping (Future<[PostModel], APIError>.Promise)) -> () {
+  static func fetchAll(promise: @escaping (Future<[PostModel], APIError>.Promise)) -> () {
     cancellable = URLSession.shared.dataTaskPublisher(for: url)
       .map {$0.data}
       .eraseToAnyPublisher()
@@ -38,33 +38,6 @@ class PostModel: Codable, Identifiable {
           promise(.failure(.networkError))
         }
     }
-  }
-
-  static func fetchAll(promise: @escaping (Future<[PostModel], APIError>.Promise)) -> () {
-    URLSession.shared.dataTask(with: url) { data, response, error in
-      if let error = error {
-        print("\(error)")
-        promise(.failure(.networkError))
-        return
-      }
-      if let response = response as? HTTPURLResponse, response.statusCode == 404 {
-        promise(.failure(.notFound))
-        return
-      }
-      guard let data = data else {
-        promise(.failure(.networkError))
-        return
-      }
-      let jsonDecoder = JSONDecoder()
-      jsonDecoder.dateDecodingStrategy = .iso8601
-      do {
-        let posts = try jsonDecoder.decode([PostModel].self, from: data)
-        promise(.success(posts))
-      } catch {
-        print("\(error)")
-        promise(.failure(.networkError))
-      }
-    }.resume()
   }
 
   var id: String {
