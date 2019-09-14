@@ -2,28 +2,36 @@ import SwiftUI
 
 struct FeatureImage: View {
 
-  var post: PostModel
-  @State var image: Image?
+  var imageResource: PostModel.Resource
+  var coordinator: PostModel.Resource.Coordinator
 
-  var postImageManager: PostImageManager {
-    PostImageManager(post)
+  @State private var image: Image?
+
+  init(imageResource: PostModel.Resource) {
+    self.imageResource = imageResource
+    self.coordinator = imageResource.coordinator
   }
 
   var body: some View {
     Group {
       if image == nil {
         Image(systemName: "paperclip")
+        .resizable()
+        .aspectRatio(contentMode: .fit)
+        .aspectRatio(contentMode: .fit)
+        .frame(width: 150)
       } else {
         image!
         .resizable()
-        .frame(width: 200)
         .aspectRatio(contentMode: .fit)
+        .frame(width: 150)
       }
     }
     .onAppear {
-      self.postImageManager.imageRequest.send("feature")
+      //self.imageResource.requestImage()
+      self.coordinator.requests.send("")
     }
-    .onReceive(postImageManager.imageResponse) {
+    .onReceive(self.coordinator.responses) {
       self.image = $0
     }
   }
@@ -31,6 +39,6 @@ struct FeatureImage: View {
 
 struct FeatureImage_Previews: PreviewProvider {
   static var previews: some View {
-    FeatureImage(post: PostModel.specimen)
+    FeatureImage(imageResource: PostModel.Resource.specimen)
   }
 }

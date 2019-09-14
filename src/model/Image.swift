@@ -2,8 +2,8 @@ import Combine
 import SwiftUI
 import UIKit
 
-class ImageModel {
-  static func fetch(withUrl url: URL, promise: @escaping (Future<Image, APIError>.Promise)) -> () {
+extension Image {
+  static func fetch(fromUrl url: URL, promise: @escaping (Future<Image, APIError>.Promise)) -> () {
     URLSession.shared.dataTask(with: url) { data, response, error in
       if let error = error {
         print("\(error)")

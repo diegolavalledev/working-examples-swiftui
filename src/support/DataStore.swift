@@ -12,7 +12,7 @@ class DataStore: ObservableObject {
     //.debounce(for: 0.5, scheduler: RunLoop.main)
     .removeDuplicates()
     .flatMap { _ in
-      Future { PostModel.fetchAll(promise: $0) }
+      Future { PostModel.fetchAll2(promise: $0) }
     }
     .receive(on: DispatchQueue.main)
     .catch { e in

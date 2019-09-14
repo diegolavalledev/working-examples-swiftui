@@ -16,7 +16,7 @@ struct FeaturedPost: View {
       } else {
         ScrollView(.vertical) {
           VStack {
-            FeatureImage(post: featuredPost)
+            FeatureImage(imageResource: featuredPost.featureImage)
             Post(post: featuredPost)
           }
         }

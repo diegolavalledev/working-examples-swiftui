@@ -12,23 +12,32 @@ class PostModel: Codable, Identifiable {
 
   static var url = URL(string: "\(baseUrl)posts/index.json")!
 
-  class ParamsModel: Codable {
-    var tags: [String]
-    var twitter: String
-    var featured: Bool
-    var hasDemo: Bool
-
-    init() {
-      tags = []
-      twitter = "@"
-      featured = false
-      hasDemo = false
+  static var cancellable: AnyCancellable?
+   
+  static func fetchAll2(promise: @escaping (Future<[PostModel], APIError>.Promise)) -> () {
+    cancellable = URLSession.shared.dataTaskPublisher(for: url)
+      .map {$0.data}
+      .eraseToAnyPublisher()
+      .sink(receiveCompletion: { status in
+        switch status {
+        case .failure(let error):
+          print("\(error)")
+          promise(.failure(.networkError))
+        case .finished:
+          break
+        }
+      })
+      { data in
+        let jsonDecoder = JSONDecoder()
+        jsonDecoder.dateDecodingStrategy = .iso8601
+        do {
+          let posts = try jsonDecoder.decode([PostModel].self, from: data)
+          promise(.success(posts))
+        } catch {
+          print("\(error)")
+          promise(.failure(.networkError))
+        }
     }
-  }
-
-  class ResourceModel: Codable {
-    var name: String
-    var permalink: String
   }
 
   static func fetchAll(promise: @escaping (Future<[PostModel], APIError>.Promise)) -> () {
@@ -74,60 +83,144 @@ class PostModel: Codable, Identifiable {
   var expiryDate: String
   var plainSummary: String
   var truncated: Bool
-  var params: ParamsModel
-  var images: [ResourceModel]
+  var params: Params
+  var images: [Resource]
 
-  private init() {
-    title = "Hello World"
-    permalink = "https://host.local/posts/hello-world"
-    relPermalink = "/posts/hello-world"
-    slug = "hello-world"
-    sectionsPath = "posts"
-    draft = false
-    date = Date()
-    lastmod = ""
-    publishDate = ""
-    expiryDate = ""
-    plainSummary = """
-      Hello,
-      World.
-    """
-    truncated = true
-    params = ParamsModel()
-    images = []
+  private init(
+    title: String,
+    permalink: String,
+    relPermalink: String,
+    slug: String,
+    sectionsPath: String,
+    draft: Bool,
+    date: Date,
+    lastmod: String,
+    publishDate: String,
+    expiryDate: String,
+    plainSummary: String,
+    truncated: Bool,
+    params: Params,
+    images: [Resource]
+  ) {
+    self.title = title
+    self.permalink = permalink
+    self.relPermalink = relPermalink
+    self.slug = slug
+    self.sectionsPath = sectionsPath
+    self.draft = draft
+    self.date = date
+    self.lastmod = lastmod
+    self.publishDate = publishDate
+    self.expiryDate = expiryDate
+    self.plainSummary = plainSummary
+    self.truncated = truncated
+    self.params = params
+    self.images = images
   }
 
   static var specimen: PostModel {
-    let post = PostModel()
-    return post
+    PostModel(
+      title: "Hello World",
+      permalink: "https://host.local/posts/hello-world",
+      relPermalink: "/posts/hello-world",
+      slug: "hello-world",
+      sectionsPath: "posts",
+      draft: false,
+      date: Date(),
+      lastmod: "",
+      publishDate: "",
+      expiryDate: "",
+      plainSummary: """
+        Hello,
+        World.
+      """,
+      truncated: true,
+      params: Params(),
+      images: []
+    )
+  }
+  
+  var featureImage: Resource {
+    images.first(where: {$0.name == "feature"})!
   }
 }
 
-class PostImageManager {
+extension PostModel {
+  class Params: Codable {
+    var tags: [String]
+    var twitter: String
+    var featured: Bool
+    var hasDemo: Bool
 
-  var post: PostModel
-  
-  init(_ post: PostModel) {
-    self.post = post
-  }
-
-  func imageUrl(_ name: String) -> URL {
-    URL(string: post.images.first(where: {$0.name == name})!.permalink)!
-  }
-
-  var imageRequest = PassthroughSubject<String, APIError>()
-
-  var imageResponse: AnyPublisher<Image, Never> {
-    imageRequest
-    .debounce(for: 0.5, scheduler: RunLoop.main)
-    .removeDuplicates()
-    .flatMap { imageName in
-      Future { ImageModel.fetch(withUrl: self.imageUrl(imageName), promise: $0) }
+    init() {
+      tags = []
+      twitter = "@"
+      featured = false
+      hasDemo = false
     }
-    .receive(on: DispatchQueue.main)
-    .catch { e in
-      Optional.Publisher(nil)
+  }
+}
+
+extension PostModel {
+
+  class Resource: Codable {
+    var name: String
+    var permalink: String
+    var width: CGFloat
+    var height: CGFloat
+
+    var url: URL {
+      URL(string: permalink)!
     }
-    .eraseToAnyPublisher()
+    
+    var coordinator: Coordinator {
+      Coordinator(self)
+    }
+
+    static var specimen: Resource {
+      Resource(
+        name: "feature",
+        permalink: "http://localhost:1313/posts/no-uiiimage/icons.png",
+        width: 400,
+        height: 300
+      )
+    }
+
+    init(
+      name: String,
+      permalink: String,
+      width: CGFloat,
+      height: CGFloat
+    ) {
+      self.name = name
+      self.permalink = permalink
+      self.width = width
+      self.height = height
+    }
+  }
+}
+
+extension PostModel.Resource {
+  class Coordinator {
+
+    var resource: PostModel.Resource
+    
+    init(_ resource: PostModel.Resource) {
+      self.resource = resource
+    }
+
+    var requests = PassthroughSubject<String, APIError>()
+    var responses: AnyPublisher<Image, Never> {
+      requests
+      .removeDuplicates()
+      .flatMap { _ in
+        Future { Image.fetch(fromUrl: self.resource.url, promise: $0) }
+      }
+      .receive(on: DispatchQueue.main)
+      .catch { _ in
+        Optional.Publisher(nil)
+      }
+      .eraseToAnyPublisher()
+    }
   }
 }

@@ -23,7 +23,7 @@ struct PostSummary: View {
       }
       Text("\(post.plainSummary)")
       .lineLimit(1)
-      .padding()
+      //.padding()
       NavigationLink("See post", destination: Post(post: post))
       .frame(maxWidth: .infinity, alignment: .trailing)
     }
@@ -33,7 +33,13 @@ struct PostSummary: View {
 
 struct PostSummary_Previews: PreviewProvider {
   static var previews: some View {
-    PostSummary(post: PostModel.specimen)
+    Group {
+      PostSummary(post: PostModel.specimen)
+      .background(Color("background"))
+      .environment(\.colorScheme, .dark)
+      PostSummary(post: PostModel.specimen)
+
+    }
     .previewLayout(.sizeThatFits)
   }
 }

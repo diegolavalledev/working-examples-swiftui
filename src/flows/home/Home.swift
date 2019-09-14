@@ -18,11 +18,16 @@ struct Home: View {
       }
     }
     .environmentObject(store)
+    .accentColor(Color("accent"))
   }
 }
 
 struct Home_Previews: PreviewProvider {
   static var previews: some View {
-    Home()
+    Group {
+      Home()
+      Home()
+      .environment(\.colorScheme, .dark)
+    }
   }
 }
