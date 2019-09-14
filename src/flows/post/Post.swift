@@ -51,6 +51,21 @@ struct Post: View {
         }
 
         Text("\(post.plainSummary)")
+
+        if post.params.hasDemo {
+          Button(action: {
+            self.share = false
+            self.showSheet.toggle()
+          }) {
+            HStack {
+              Text("Working Example: \(post.params.example!)")
+              Spacer()
+              Image(systemName: "hand.draw")
+            }
+            .padding()
+          }
+        }
+
         VStack {
           Button(action: {
             UIApplication.shared.open(
@@ -64,20 +79,6 @@ struct Post: View {
               // Image(systemName: "book")
             }
             .padding()
-          }
-          
-          if post.params.hasDemo {
-            Button(action: {
-              self.share = false
-              self.showSheet.toggle()
-            }) {
-              HStack {
-                Text("Live example")
-                Spacer()
-                Image(systemName: "hand.draw")
-              }
-              .padding()
-            }
           }
 
           Button(action: {
@@ -146,7 +147,8 @@ struct Post: View {
           self.post.title
         ])
       } else {
-        WorkingExample(id: self.post.slug)
+        // TODO: remove this
+        Example.withPermalink(self.post.params.example!)!.view
       }
     }
   }

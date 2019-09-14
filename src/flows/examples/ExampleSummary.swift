@@ -22,12 +22,17 @@ struct ExampleSummary: View {
 
       Text("\(example.title)")
       .font(.title)
-      Text("\(example.plainSummary)")
+      Text("\(example.subtitle)")
       .lineLimit(1)
       HStack {
         Spacer()
         Image(systemName: "hand.draw")
         .foregroundColor(.accentColor)
+        .padding(.leading)
+        .onTapGesture {
+          self.share = false
+          self.showSheet.toggle()
+        }
         Image(systemName: "ellipsis.circle.fill")
         .foregroundColor(.accentColor)
         .padding(.horizontal)
@@ -37,15 +42,11 @@ struct ExampleSummary: View {
       }
     }
     .padding()
-    .onTapGesture {
-      self.share = false
-      self.showSheet.toggle()
-    }
     .actionSheet(isPresented: $showActionSheet) {
       ActionSheet(
         title: Text("\(example.title)"),
         buttons: [
-          .default(Text("Live example")) {
+          .default(Text("Run example")) {
             self.share = false
             self.showSheet.toggle()
           },
@@ -54,7 +55,7 @@ struct ExampleSummary: View {
               URL(string: "https://github.com/swift-you-and-i/working-examples/tree/master/Sources/WorkingExamples/")!
             )
           },
-          .default(Text("Read post")) {
+          .default(Text("Read online")) {
             UIApplication.shared.open(
               URL(string: self.example.permalink)!
             )
@@ -75,7 +76,7 @@ struct ExampleSummary: View {
           self.example.title
         ])
       } else {
-        WorkingExample(id: self.example.slug)
+        Example.withPermalink(self.example.relPermalink)?.view
       }
     }
   }

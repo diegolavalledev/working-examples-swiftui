@@ -123,13 +123,15 @@ extension PostModel {
     var tags: [String]
     var twitter: String
     var featured: Bool
-    var hasDemo: Bool
+    var hasDemo: Bool {
+      example != nil
+    }
+    var example: String?
 
     init() {
       tags = []
       twitter = "@"
       featured = false
-      hasDemo = false
     }
   }
 }
