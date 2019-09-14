@@ -28,7 +28,13 @@ struct PostsTab: View {
         }
         .frame(maxWidth: .infinity)
       }
-      .navigationBarTitle("Swift You and I")
+      .navigationBarTitle("Featured Post")
+      VStack {
+        Text("Posts")
+        .font(.headline)
+        Text("Swipe from the left edge of the device to reveal the posts list")
+      }
+      .padding()
     }
     .onAppear {
       self.store.postsRequest.send("")

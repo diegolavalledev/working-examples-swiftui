@@ -48,7 +48,7 @@
 		6253CF2B23FEDF6C00538F8C /* FeaturedPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedPost.swift; sourceTree = "<group>"; };
 		6253CF2F23FEF5AC00538F8C /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		6253CF3123FEFF6100538F8C /* FeatureImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureImage.swift; sourceTree = "<group>"; };
-		6285044C23BDFB1000A63C32 /* SwiftYouAndI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftYouAndI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6285044C23BDFB1000A63C32 /* WorkingExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkingExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6285044F23BDFB1000A63C32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6285045123BDFB1000A63C32 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6285045323BDFB1000A63C32 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
@@ -117,7 +117,7 @@
 		6285044D23BDFB1000A63C32 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6285044C23BDFB1000A63C32 /* SwiftYouAndI.app */,
+				6285044C23BDFB1000A63C32 /* WorkingExamples.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -252,9 +252,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6285044B23BDFB1000A63C32 /* SwiftYouAndI */ = {
+		6285044B23BDFB1000A63C32 /* SwiftYouI */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6285046023BDFB1100A63C32 /* Build configuration list for PBXNativeTarget "SwiftYouAndI" */;
+			buildConfigurationList = 6285046023BDFB1100A63C32 /* Build configuration list for PBXNativeTarget "SwiftYouI" */;
 			buildPhases = (
 				6285044823BDFB1000A63C32 /* Sources */,
 				6285044923BDFB1000A63C32 /* Frameworks */,
@@ -264,12 +264,12 @@
 			);
 			dependencies = (
 			);
-			name = SwiftYouAndI;
+			name = SwiftYouI;
 			packageProductDependencies = (
 				624ECD6023F6EA170068D139 /* WorkingExamples */,
 			);
 			productName = SampleCode;
-			productReference = 6285044C23BDFB1000A63C32 /* SwiftYouAndI.app */;
+			productReference = 6285044C23BDFB1000A63C32 /* WorkingExamples.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -287,7 +287,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6285044723BDFB1000A63C32 /* Build configuration list for PBXProject "SwiftYouAndI" */;
+			buildConfigurationList = 6285044723BDFB1000A63C32 /* Build configuration list for PBXProject "SwiftYouI" */;
 			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -303,7 +303,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6285044B23BDFB1000A63C32 /* SwiftYouAndI */,
+				6285044B23BDFB1000A63C32 /* SwiftYouI */,
 			);
 		};
 /* End PBXProject section */
@@ -433,7 +433,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"src/PreviewContent\"";
 				DEVELOPMENT_TEAM = 92XVGR6M56;
 				ENABLE_PREVIEWS = YES;
@@ -444,7 +444,7 @@
 				);
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.diegolavalle.swiftui.app;
-				PRODUCT_NAME = SwiftYouAndI;
+				PRODUCT_NAME = WorkingExamples;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -574,7 +574,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"src/PreviewContent\"";
 				DEVELOPMENT_TEAM = 92XVGR6M56;
 				ENABLE_PREVIEWS = YES;
@@ -585,7 +585,7 @@
 				);
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.diegolavalle.swiftui.app;
-				PRODUCT_NAME = SwiftYouAndI;
+				PRODUCT_NAME = WorkingExamples;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -597,7 +597,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"src/PreviewContent\"";
 				DEVELOPMENT_TEAM = 92XVGR6M56;
 				ENABLE_PREVIEWS = YES;
@@ -608,7 +608,7 @@
 				);
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.diegolavalle.swiftui.app;
-				PRODUCT_NAME = SwiftYouAndI;
+				PRODUCT_NAME = WorkingExamples;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -617,7 +617,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6285044723BDFB1000A63C32 /* Build configuration list for PBXProject "SwiftYouAndI" */ = {
+		6285044723BDFB1000A63C32 /* Build configuration list for PBXProject "SwiftYouI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6285045E23BDFB1100A63C32 /* Debug */,
@@ -627,7 +627,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6285046023BDFB1100A63C32 /* Build configuration list for PBXNativeTarget "SwiftYouAndI" */ = {
+		6285046023BDFB1100A63C32 /* Build configuration list for PBXNativeTarget "SwiftYouI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6285046123BDFB1100A63C32 /* Debug */,

@@ -21,6 +21,12 @@ struct ExamplesTab: View {
         }
       }
       .navigationBarTitle("Live examples")
+      VStack {
+        Text("Examples")
+        .font(.headline)
+        Text("Swipe from the left edge of the device to reveal the examples list")
+      }
+      .padding()
     }
     .onAppear {
       self.store.postsRequest.send("")

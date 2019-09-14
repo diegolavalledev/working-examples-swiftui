@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6285044B23BDFB1000A63C32"
-               BuildableName = "SwiftYouAndI.app"
-               BlueprintName = "SwiftYouAndI"
-               ReferencedContainer = "container:SwiftYouAndI.xcodeproj">
+               BuildableName = "UI Working Examples.app"
+               BlueprintName = "SwiftYouI"
+               ReferencedContainer = "container:SwiftYouI.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -31,7 +31,7 @@
       </Testables>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "LocalDebug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6285044B23BDFB1000A63C32"
-            BuildableName = "SwiftYouAndI.app"
-            BlueprintName = "SwiftYouAndI"
-            ReferencedContainer = "container:SwiftYouAndI.xcodeproj">
+            BuildableName = "UI Working Examples.app"
+            BlueprintName = "SwiftYouI"
+            ReferencedContainer = "container:SwiftYouI.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6285044B23BDFB1000A63C32"
-            BuildableName = "SwiftYouAndI.app"
-            BlueprintName = "SwiftYouAndI"
-            ReferencedContainer = "container:SwiftYouAndI.xcodeproj">
+            BuildableName = "UI Working Examples.app"
+            BlueprintName = "SwiftYouI"
+            ReferencedContainer = "container:SwiftYouI.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

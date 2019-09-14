@@ -39,7 +39,12 @@ struct SearchTab: View {
         }
       }
       .navigationBarTitle("Available tags")
-      //.navigationBarHidden(true)
+      VStack {
+        Text("Search")
+        .font(.headline)
+        Text("Swipe from the left edge of the device to reveal the search options")
+      }
+      .padding()
     }
     .onAppear {
       self.store.postsRequest.send("")

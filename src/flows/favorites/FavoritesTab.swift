@@ -17,6 +17,12 @@ struct FavoritesTab: View {
         }
       }
       .navigationBarTitle("Favorite posts")
+      VStack {
+        Text("Favorites")
+        .font(.headline)
+        Text("Swipe from the left edge of the device to reveal the favorites list")
+      }
+      .padding()
     }
     .onAppear {
       self.store.postsRequest.send("")
