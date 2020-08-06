@@ -5,9 +5,9 @@
         "package": "WorkingExamples",
         "repositoryURL": "https://github.com/swift-you-and-i/working-examples",
         "state": {
-          "branch": "master",
-          "revision": "14178bc4c72cecbd72ae7865fa7111fc1c7de84f",
-          "version": null
+          "branch": null,
+          "revision": "ab329c8a34b259ce45e4dfe90c38008c6f422e0c",
+          "version": "1.0.3"
         }
       }
     ]

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1130"
+   LastUpgradeVersion = "1160"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6285044B23BDFB1000A63C32"
                BuildableName = "WorkingExamples.app"
-               BlueprintName = "SwiftYouI"
-               ReferencedContainer = "container:SwiftYouI.xcodeproj">
+               BlueprintName = "WorkingExamples"
+               ReferencedContainer = "container:WorkingExamples.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,8 +46,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6285044B23BDFB1000A63C32"
             BuildableName = "WorkingExamples.app"
-            BlueprintName = "SwiftYouI"
-            ReferencedContainer = "container:SwiftYouI.xcodeproj">
+            BlueprintName = "WorkingExamples"
+            ReferencedContainer = "container:WorkingExamples.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -63,8 +63,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6285044B23BDFB1000A63C32"
             BuildableName = "WorkingExamples.app"
-            BlueprintName = "SwiftYouI"
-            ReferencedContainer = "container:SwiftYouI.xcodeproj">
+            BlueprintName = "WorkingExamples"
+            ReferencedContainer = "container:WorkingExamples.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
