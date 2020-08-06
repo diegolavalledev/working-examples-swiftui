@@ -1,5 +1,3 @@
 .DS_Store
-/gitconfig.user
-
-/SwiftYouI.xcodeproj/xcuserdata
-/SwiftYouI.xcodeproj/project.xcworkspace/xcuserdata
+/conf/git/user
+xcuserdata/
