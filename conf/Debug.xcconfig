@@ -1,0 +1,6 @@
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+PRODUCT_NAME=WorkingExamplesSwiftUI
+WORKING_EXAMPLE_CLIP_BUNDLE_NAME=WorkingExamples
+// OTHER_SWIFT_FLAGS=-DLOCAL_ENDPOINT
