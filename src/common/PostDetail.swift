@@ -9,40 +9,55 @@ struct PostDetail: View {
   @State private var imageTask: AnyCancellable?
 
   @State var postDetails: PostModel?
-  @State var iconImage: CGImage?
+  @State var coverImage: CGImage?
 
   var body: some View {
-    VStack {
-      Text(post.title).font(.headline)
+    ScrollView { VStack {
+
+      HStack {
+        Text("@\(post.params.twitter)")
+        .font(.footnote)
+        .italic()
+        .foregroundColor(Color("secondaryLabel"))
+        Spacer()
+        Text("\(post.date, formatter: .postDate)")
+        .font(.footnote)
+        .foregroundColor(Color("secondaryLabel"))
+      }
+      .frame(maxWidth: .infinity, alignment: .trailing)
+      .padding([.bottom, .horizontal])
+
+      Text(post.title).font(.largeTitle)
+      Text(post.subtitle).italic()
+
+      if let coverImage = coverImage {
+        Image(coverImage, scale: 1.0, label: Text("Cover Image"))
+        .resizable()
+        .aspectRatio(contentMode: .fit)
+        .frame(maxWidth: .infinity)
+      }
 
       if let postDetails = postDetails {
-        Text(postDetails.title)
+        Text(postDetails.plainSummary).padding()
       } else {
-        ProgressView()
-      }
-      if let featureImageMetadata = post.featureImage {
-        if let iconImage = iconImage {
-          Image(iconImage, scale: 1.0, label: Text("Post Image"))
-        } else {
-          Image(systemName: "questionmark")
-          .resizable()
-          .aspectRatio(contentMode: .fit)
-          .frame(width: featureImageMetadata.width, height: featureImageMetadata.height)
-          .clipped()
+        VStack {
+          Text("Lorem ipsum")
+          .redacted(reason: .placeholder)
+          ProgressView()
         }
+        .padding()
       }
-    }
+      Link(destination: URL(string: post.permalink)!, label: {
+        Text("Continue reading ") + Text(post.title).italic() + Text("…")
+      })
+      .padding(.horizontal)
+
+      Spacer()
+    } }
     .onAppear {
       postTask = post.detailsPublisher.assign(to: \.postDetails, on: self)
-      imageTask = post.featureImage?.publisher.assign(to: \.iconImage, on: self)
-      if post.featureImage == nil {
-        print("featureImage nil")
-      } else {
-        print("featureImage not nil")
-      
-      }
+      imageTask = post.coverImage?.publisher.assign(to: \.coverImage, on: self)
     }
-    .navigationTitle(post.title)
   }
 }
 

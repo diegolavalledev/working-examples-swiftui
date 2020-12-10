@@ -69,6 +69,10 @@
 		62E379042559AA5E00685207 /* PostDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E378FF2559A91100685207 /* PostDetail.swift */; };
 		62E379092559AA6000685207 /* PostDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E378FF2559A91100685207 /* PostDetail.swift */; };
 		62E3790F2559ABA000685207 /* ExamplesHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E3790E2559ABA000685207 /* ExamplesHome.swift */; };
+		9D8BF0102580D01E00B01A77 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8BF00B2580CFBF00B01A77 /* Formatter.swift */; };
+		9D8BF0152580D01F00B01A77 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8BF00B2580CFBF00B01A77 /* Formatter.swift */; };
+		9D8BF01F2580D5AA00B01A77 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9D8BF01E2580D5AA00B01A77 /* Localizable.strings */; };
+		9D8BF0202580D5AA00B01A77 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9D8BF01E2580D5AA00B01A77 /* Localizable.strings */; };
 		D70BD3622562D2AC00A2CD98 /* PostsHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6221B7132549E04000AC70B2 /* PostsHome.swift */; };
 		D70BD3632562D2AC00A2CD98 /* AppHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6221B709254840CA00AC70B2 /* AppHome.swift */; };
 		D70BD3642562D2AC00A2CD98 /* ExamplesHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E3790E2559ABA000685207 /* ExamplesHome.swift */; };
@@ -170,6 +174,8 @@
 		62E3790E2559ABA000685207 /* ExamplesHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplesHome.swift; sourceTree = "<group>"; };
 		9D7245A2257AB57C00BC6E41 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		9D7245A3257AB57C00BC6E41 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9D8BF00B2580CFBF00B01A77 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
+		9D8BF01E2580D5AA00B01A77 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,8 +297,10 @@
 				62E378C025599C5000685207 /* PostModel.swift */,
 				62E378CC25599E6C00685207 /* PostModel+Combine.swift */,
 				62E378CB25599E5F00685207 /* PostModel+Params.swift */,
+				9D8BF00B2580CFBF00B01A77 /* Formatter.swift */,
 				6221B7132549E04000AC70B2 /* PostsHome.swift */,
 				622538112539F6FB00EFD988 /* WorkingExamplesApp.swift */,
+				9D8BF01E2580D5AA00B01A77 /* Localizable.strings */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -510,6 +518,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				622538192539F6FC00EFD988 /* PreviewAssets.xcassets in Resources */,
+				9D8BF01F2580D5AA00B01A77 /* Localizable.strings in Resources */,
 				628D2C37253A057A007AF75E /* Settings.bundle in Resources */,
 				622538162539F6FC00EFD988 /* Assets.xcassets in Resources */,
 			);
@@ -528,6 +537,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				628D2BFC2539FBFE007AF75E /* PreviewAssets.xcassets in Resources */,
+				9D8BF0202580D5AA00B01A77 /* Localizable.strings in Resources */,
 				628D2BF92539FBFE007AF75E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -549,6 +559,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				623F7DC6254B182200E20E47 /* ImageModel.swift in Sources */,
+				9D8BF0102580D01E00B01A77 /* Formatter.swift in Sources */,
 				6221B6B52541ECED00AC70B2 /* ExampleModel+SwiftUI.swift in Sources */,
 				6221B6D22541F18D00AC70B2 /* ExampleDetail.swift in Sources */,
 				62C9C6D9253E02FA00E2AA88 /* ExampleList.swift in Sources */,
@@ -597,6 +608,7 @@
 				6221B7242549E14800AC70B2 /* ExampleModel+Array.swift in Sources */,
 				62E378D12559A08400685207 /* PostModel+Params.swift in Sources */,
 				D70BD3632562D2AC00A2CD98 /* AppHome.swift in Sources */,
+				9D8BF0152580D01F00B01A77 /* Formatter.swift in Sources */,
 				62E378B1254C3D1200685207 /* ExampleModel+Combine.swift in Sources */,
 				6221B72A2549E63400AC70B2 /* AppData.swift in Sources */,
 				62E378F62559A86100685207 /* PostList.swift in Sources */,
@@ -766,7 +778,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = conf/iphone.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_ASSET_PATHS = "\"src/iphone/PreviewContent\"";
 				DEVELOPMENT_TEAM = 92XVGR6M56;
 				ENABLE_PREVIEWS = YES;
@@ -793,7 +805,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = conf/iphone.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_ASSET_PATHS = "\"src/iphone/PreviewContent\"";
 				DEVELOPMENT_TEAM = 92XVGR6M56;
 				ENABLE_PREVIEWS = YES;
@@ -818,7 +830,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = conf/workingexamplewidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = 92XVGR6M56;
 				INFOPLIST_FILE = "conf/workingexamplewidget-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -843,7 +855,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = conf/workingexamplewidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = 92XVGR6M56;
 				INFOPLIST_FILE = "conf/workingexamplewidget-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -868,7 +880,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = conf/workingexamplewidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = 92XVGR6M56;
 				INFOPLIST_FILE = "conf/workingexamplewidget-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -896,7 +908,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_ASSET_PATHS = "\"src/mac/PreviewContent\"";
 				DEVELOPMENT_TEAM = 92XVGR6M56;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -925,7 +937,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_ASSET_PATHS = "\"src/mac/PreviewContent\"";
 				DEVELOPMENT_TEAM = 92XVGR6M56;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1015,7 +1027,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = conf/iphone.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_ASSET_PATHS = "\"src/iphone/PreviewContent\"";
 				DEVELOPMENT_TEAM = 92XVGR6M56;
 				ENABLE_PREVIEWS = YES;
@@ -1043,7 +1055,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_ASSET_PATHS = "\"src/mac/PreviewContent\"";
 				DEVELOPMENT_TEAM = 92XVGR6M56;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1070,7 +1082,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = conf/workingexampleclip.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_ASSET_PATHS = "\"src/workingexampleclip/PreviewContent\"";
 				DEVELOPMENT_TEAM = 92XVGR6M56;
 				ENABLE_PREVIEWS = YES;
@@ -1096,7 +1108,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = conf/workingexampleclip.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_ASSET_PATHS = "\"src/workingexampleclip/PreviewContent\"";
 				DEVELOPMENT_TEAM = 92XVGR6M56;
 				ENABLE_PREVIEWS = YES;
@@ -1122,7 +1134,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = conf/workingexampleclip.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_ASSET_PATHS = "\"src/workingexampleclip/PreviewContent\"";
 				DEVELOPMENT_TEAM = 92XVGR6M56;
 				ENABLE_PREVIEWS = YES;

@@ -9,13 +9,13 @@ struct AppHome: View {
       .tag(0)
       .tabItem {
         Image(systemName: "newspaper.fill")
-        Text("Today")
+        Text("Swift You and I")
       }
       ExamplesHome()
       .tag(1)
       .tabItem {
         Image(systemName: "hand.tap.fill")
-        Text("Examples")
+        Text("Working Examples")
       }
     }
     .onContinueUserActivity(NSUserActivityTypeBrowsingWeb) { userActivity in

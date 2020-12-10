@@ -13,6 +13,7 @@ struct PostModel: Codable, Identifiable, Hashable {
   }
 
   let title: String
+  let subtitle: String
   let permalink: String
   let relPermalink: String
   let slug: String
@@ -28,7 +29,8 @@ struct PostModel: Codable, Identifiable, Hashable {
   let images: [ImageModel]
 
   static let sample = PostModel(
-    title: "Hello World",
+    title: "Hello, World!",
+    subtitle: "Greeting Planet Earth",
     permalink: "https://host.local/posts/hello-world",
     relPermalink: "/posts/hello-world",
     slug: "hello-world",
@@ -47,7 +49,7 @@ struct PostModel: Codable, Identifiable, Hashable {
     images: []
   )
   
-  var featureImage: ImageModel? {
-    images.first(where: {$0.name == "feature"})
+  var coverImage: ImageModel? {
+    images.first(where: {$0.name == "cover"})
   }
 }

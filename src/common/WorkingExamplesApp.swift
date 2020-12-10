@@ -6,7 +6,9 @@ struct WorkingExamplesApp: App {
 
   var body: some Scene {
     WindowGroup {
-      AppHome().environmentObject(appData)
+      AppHome()
+      .environmentObject(appData)
+      .accentColor(Color("AccentColor"))
     }
   }
 }

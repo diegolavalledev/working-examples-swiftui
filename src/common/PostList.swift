@@ -14,16 +14,31 @@ struct PostList: View {
   }
 
   var body: some View {
-    List {
-      ForEach(posts) { post in
-        NavigationLink(
-          destination: postDetail,
-          tag: post,
-          selection: $selectedPost,
-          label: {
-            Text("\(post.title)")
-          }
-        )
+    ScrollView(.vertical) {
+      VStack(alignment: .leading) {
+        ForEach(posts) { post in
+          VStack(alignment: .leading) {
+              Text("\(post.date, formatter: .postDate)")
+              .font(.footnote)
+              .foregroundColor(Color("secondaryLabel"))
+              .frame(maxWidth: .infinity, alignment: .trailing)
+              .padding(.bottom)
+
+              Text("\(post.title)").font(.headline)
+              Text("\(post.subtitle)").font(.subheadline).padding(.vertical)
+              NavigationLink(
+                destination: postDetail,
+                tag: post,
+                selection: $selectedPost,
+                label: {
+                  Text("Read More")
+                  .frame(maxWidth: .infinity, alignment: .trailing)
+                }
+              )
+              Divider()
+          }.padding()
+        }
+        Spacer()
       }
     }
   }

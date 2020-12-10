@@ -29,7 +29,6 @@ extension ImageModel {
   var publisher: AnyPublisher<CGImage?, Never> {
     URLSession.shared
     .dataTaskPublisher(for: url)
-    .print()
     .map(\.data)
     .map {
       CGImage(pngDataProviderSource: CGDataProvider(data: $0 as CFData)!, decode: nil, shouldInterpolate: true, intent: .perceptual)

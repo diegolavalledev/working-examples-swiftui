@@ -15,6 +15,7 @@ struct WorkingExampleClipApp: App {
           NavigationView {
             ExampleDetail(example: example, present: true)
           }
+          .navigationViewStyle(StackNavigationViewStyle())
         } else {
           ProgressView("Loading example…")
         }

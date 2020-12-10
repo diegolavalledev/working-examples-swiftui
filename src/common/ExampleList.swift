@@ -22,7 +22,10 @@ struct ExampleList: View {
           tag: example,
           selection: $selectedExample,
           label: {
-            Text("\(example.title)")
+            VStack(alignment: .leading) {
+              Text("\(example.title)")
+              Text("\(example.subtitle)").font(.caption)
+            }
           }
         )
       }
