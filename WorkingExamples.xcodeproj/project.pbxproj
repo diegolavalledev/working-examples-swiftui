@@ -25,8 +25,6 @@
 		6221B72A2549E63400AC70B2 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620047BD25402DB10081B773 /* AppData.swift */; };
 		6221B72F2549E63B00AC70B2 /* ExampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620047C225402DDE0081B773 /* ExampleModel.swift */; };
 		6221B7382549E65C00AC70B2 /* ExampleDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6221B6CD2541F0E000AC70B2 /* ExampleDetail.swift */; };
-		6223A5D5253F3E000064EA59 /* WorkingExamples in Frameworks */ = {isa = PBXBuildFile; productRef = 6223A5D4253F3E000064EA59 /* WorkingExamples */; };
-		6223A5DA253F3FA80064EA59 /* WorkingExamples in Frameworks */ = {isa = PBXBuildFile; productRef = 6223A5D9253F3FA80064EA59 /* WorkingExamples */; };
 		622538122539F6FB00EFD988 /* WorkingExamplesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622538112539F6FB00EFD988 /* WorkingExamplesApp.swift */; };
 		622538162539F6FC00EFD988 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 622538152539F6FC00EFD988 /* Assets.xcassets */; };
 		622538192539F6FC00EFD988 /* PreviewAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 622538182539F6FC00EFD988 /* PreviewAssets.xcassets */; };
@@ -73,6 +71,8 @@
 		9D8BF0152580D01F00B01A77 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8BF00B2580CFBF00B01A77 /* Formatter.swift */; };
 		9D8BF01F2580D5AA00B01A77 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9D8BF01E2580D5AA00B01A77 /* Localizable.strings */; };
 		9D8BF0202580D5AA00B01A77 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9D8BF01E2580D5AA00B01A77 /* Localizable.strings */; };
+		9D9FD088258951C600142A71 /* WorkingExamples in Frameworks */ = {isa = PBXBuildFile; productRef = 9D9FD087258951C600142A71 /* WorkingExamples */; };
+		9D9FD08A258951E600142A71 /* WorkingExamples in Frameworks */ = {isa = PBXBuildFile; productRef = 9D9FD089258951E600142A71 /* WorkingExamples */; };
 		D70BD3622562D2AC00A2CD98 /* PostsHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6221B7132549E04000AC70B2 /* PostsHome.swift */; };
 		D70BD3632562D2AC00A2CD98 /* AppHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6221B709254840CA00AC70B2 /* AppHome.swift */; };
 		D70BD3642562D2AC00A2CD98 /* ExamplesHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E3790E2559ABA000685207 /* ExamplesHome.swift */; };
@@ -130,7 +130,6 @@
 		6221B709254840CA00AC70B2 /* AppHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHome.swift; sourceTree = "<group>"; };
 		6221B7132549E04000AC70B2 /* PostsHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsHome.swift; sourceTree = "<group>"; };
 		6221B71D2549E11F00AC70B2 /* ExampleModel+Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExampleModel+Array.swift"; sourceTree = "<group>"; };
-		6223A5D0253F38460064EA59 /* working-examples */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "working-examples"; path = "../working-examples"; sourceTree = "<group>"; };
 		6225380E2539F6FB00EFD988 /* WorkingExamplesSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkingExamplesSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		622538112539F6FB00EFD988 /* WorkingExamplesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingExamplesApp.swift; sourceTree = "<group>"; };
 		622538152539F6FC00EFD988 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -183,7 +182,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6223A5D5253F3E000064EA59 /* WorkingExamples in Frameworks */,
+				9D9FD088258951C600142A71 /* WorkingExamples in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,7 +207,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6223A5DA253F3FA80064EA59 /* WorkingExamples in Frameworks */,
+				9D9FD08A258951E600142A71 /* WorkingExamples in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,7 +217,6 @@
 		622538052539F6FB00EFD988 = {
 			isa = PBXGroup;
 			children = (
-				6223A5D0253F38460064EA59 /* working-examples */,
 				9D7245A2257AB57C00BC6E41 /* LICENSE */,
 				9D7245A3257AB57C00BC6E41 /* README.md */,
 				628D2BE72539FAAD007AF75E /* src */,
@@ -242,9 +240,9 @@
 		622538102539F6FB00EFD988 /* iphone */ = {
 			isa = PBXGroup;
 			children = (
+				628D2C36253A057A007AF75E /* Settings.bundle */,
 				622538152539F6FC00EFD988 /* Assets.xcassets */,
 				622538172539F6FC00EFD988 /* PreviewContent */,
-				628D2C36253A057A007AF75E /* Settings.bundle */,
 			);
 			path = iphone;
 			sourceTree = "<group>";
@@ -291,16 +289,16 @@
 				62E378A7254C3BC000685207 /* ExampleModel+Combine.swift */,
 				6221B6B02541EC6E00AC70B2 /* ExampleModel+SwiftUI.swift */,
 				62E3790E2559ABA000685207 /* ExamplesHome.swift */,
+				9D8BF00B2580CFBF00B01A77 /* Formatter.swift */,
 				623F7DC5254B16FF00E20E47 /* ImageModel.swift */,
+				9D8BF01E2580D5AA00B01A77 /* Localizable.strings */,
 				62E378FF2559A91100685207 /* PostDetail.swift */,
 				62E378F02559A85C00685207 /* PostList.swift */,
 				62E378C025599C5000685207 /* PostModel.swift */,
 				62E378CC25599E6C00685207 /* PostModel+Combine.swift */,
 				62E378CB25599E5F00685207 /* PostModel+Params.swift */,
-				9D8BF00B2580CFBF00B01A77 /* Formatter.swift */,
 				6221B7132549E04000AC70B2 /* PostsHome.swift */,
 				622538112539F6FB00EFD988 /* WorkingExamplesApp.swift */,
-				9D8BF01E2580D5AA00B01A77 /* Localizable.strings */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -400,7 +398,7 @@
 			);
 			name = iphone;
 			packageProductDependencies = (
-				6223A5D4253F3E000064EA59 /* WorkingExamples */,
+				9D9FD087258951C600142A71 /* WorkingExamples */,
 			);
 			productName = WorkingExamplesSwiftUI;
 			productReference = 6225380E2539F6FB00EFD988 /* WorkingExamplesSwiftUI.app */;
@@ -459,7 +457,7 @@
 			);
 			name = workingexampleclip;
 			packageProductDependencies = (
-				6223A5D9253F3FA80064EA59 /* WorkingExamples */,
+				9D9FD089258951E600142A71 /* WorkingExamples */,
 			);
 			productName = WorkingExampleClip;
 			productReference = 62C9C69E253DACC000E2AA88 /* workingexampleclip.app */;
@@ -473,6 +471,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1210;
 				LastUpgradeCheck = 1210;
+				ORGANIZATIONNAME = "Swift You and I by Diego Lavalle";
 				TargetAttributes = {
 					6225380D2539F6FB00EFD988 = {
 						CreatedOnToolsVersion = 12.0.1;
@@ -703,7 +702,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -759,7 +759,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -778,7 +779,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = conf/iphone.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_ASSET_PATHS = "\"src/iphone/PreviewContent\"";
 				DEVELOPMENT_TEAM = 92XVGR6M56;
 				ENABLE_PREVIEWS = YES;
@@ -788,7 +789,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.diegolavalle.swiftui.app;
 				PRODUCT_NAME = "$(inherited)";
 				SWIFT_VERSION = 5.0;
@@ -805,7 +806,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = conf/iphone.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_ASSET_PATHS = "\"src/iphone/PreviewContent\"";
 				DEVELOPMENT_TEAM = 92XVGR6M56;
 				ENABLE_PREVIEWS = YES;
@@ -815,7 +816,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.diegolavalle.swiftui.app;
 				PRODUCT_NAME = "$(inherited)";
 				SWIFT_VERSION = 5.0;
@@ -830,7 +831,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = conf/workingexamplewidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = 92XVGR6M56;
 				INFOPLIST_FILE = "conf/workingexamplewidget-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -839,12 +840,14 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.diegolavalle.swiftui.app.workingexamplewidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Debug;
 		};
@@ -855,7 +858,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = conf/workingexamplewidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = 92XVGR6M56;
 				INFOPLIST_FILE = "conf/workingexamplewidget-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -864,12 +867,14 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.diegolavalle.swiftui.app.workingexamplewidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = LocalDebug;
 		};
@@ -880,7 +885,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = conf/workingexamplewidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = 92XVGR6M56;
 				INFOPLIST_FILE = "conf/workingexamplewidget-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -889,12 +894,14 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.diegolavalle.swiftui.app.workingexamplewidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Release;
 		};
@@ -908,7 +915,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_ASSET_PATHS = "\"src/mac/PreviewContent\"";
 				DEVELOPMENT_TEAM = 92XVGR6M56;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -918,8 +925,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 2.0.0;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.diegolavalle.swiftui.app;
 				PRODUCT_NAME = "$(inherited)";
 				SDKROOT = macosx;
@@ -937,7 +944,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_ASSET_PATHS = "\"src/mac/PreviewContent\"";
 				DEVELOPMENT_TEAM = 92XVGR6M56;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -947,8 +954,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 2.0.0;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.diegolavalle.swiftui.app;
 				PRODUCT_NAME = "$(inherited)";
 				SDKROOT = macosx;
@@ -1008,7 +1015,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1027,7 +1035,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = conf/iphone.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_ASSET_PATHS = "\"src/iphone/PreviewContent\"";
 				DEVELOPMENT_TEAM = 92XVGR6M56;
 				ENABLE_PREVIEWS = YES;
@@ -1037,7 +1045,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.diegolavalle.swiftui.app;
 				PRODUCT_NAME = "$(inherited)";
 				SWIFT_VERSION = 5.0;
@@ -1055,7 +1063,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_ASSET_PATHS = "\"src/mac/PreviewContent\"";
 				DEVELOPMENT_TEAM = 92XVGR6M56;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1065,8 +1073,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 2.0.0;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.diegolavalle.swiftui.app;
 				PRODUCT_NAME = "$(inherited)";
 				SDKROOT = macosx;
@@ -1082,7 +1090,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = conf/workingexampleclip.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_ASSET_PATHS = "\"src/workingexampleclip/PreviewContent\"";
 				DEVELOPMENT_TEAM = 92XVGR6M56;
 				ENABLE_PREVIEWS = YES;
@@ -1092,7 +1100,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.diegolavalle.swiftui.app.workingexampleclip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1108,7 +1116,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = conf/workingexampleclip.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_ASSET_PATHS = "\"src/workingexampleclip/PreviewContent\"";
 				DEVELOPMENT_TEAM = 92XVGR6M56;
 				ENABLE_PREVIEWS = YES;
@@ -1118,7 +1126,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.diegolavalle.swiftui.app.workingexampleclip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1134,7 +1142,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = conf/workingexampleclip.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_ASSET_PATHS = "\"src/workingexampleclip/PreviewContent\"";
 				DEVELOPMENT_TEAM = 92XVGR6M56;
 				ENABLE_PREVIEWS = YES;
@@ -1144,7 +1152,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.diegolavalle.swiftui.app.workingexampleclip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1212,22 +1220,24 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/swift-you-and-i/working-examples";
 			requirement = {
-				branch = develop;
+				branch = master;
 				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		6223A5D4253F3E000064EA59 /* WorkingExamples */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = WorkingExamples;
-		};
-		6223A5D9253F3FA80064EA59 /* WorkingExamples */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = WorkingExamples;
-		};
 		629431BC253A096A00FA1CFD /* WorkingExamples */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 629431B6253A095100FA1CFD /* XCRemoteSwiftPackageReference "working-examples" */;
+			productName = WorkingExamples;
+		};
+		9D9FD087258951C600142A71 /* WorkingExamples */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 629431B6253A095100FA1CFD /* XCRemoteSwiftPackageReference "working-examples" */;
+			productName = WorkingExamples;
+		};
+		9D9FD089258951E600142A71 /* WorkingExamples */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 629431B6253A095100FA1CFD /* XCRemoteSwiftPackageReference "working-examples" */;
 			productName = WorkingExamples;
