@@ -50,4 +50,8 @@ struct ExampleModel: Codable, Identifiable, Hashable {
   var iconImage: ImageModel {
     images.first(where: {$0.name == "icon"})!
   }
+
+  var sourceCodeUrl: URL {
+    URL(string: "https://github.com/swift-you-and-i/working-examples/tree/master/Sources/WorkingExamples/\(slug)")!
+  }
 }

@@ -2,10 +2,15 @@ import SwiftUI
 import WorkingExamples
 import Combine
 
+#if !os(macOS)
+import StoreKit
+#endif
+
 struct ExampleDetail: View {
   let example: ExampleModel
   
   @State var present = false
+  @State var presentingAppStoreOverlay = false
 
   @State private var exampleTask: AnyCancellable?
   @State private var imageTask: AnyCancellable?
@@ -14,6 +19,17 @@ struct ExampleDetail: View {
   @State var iconImage: CGImage?
 
   var body: some View {
+#if os(macOS)
+    bodyA
+#else
+    bodyA
+    .appStoreOverlay(isPresented: $presentingAppStoreOverlay) {
+      SKOverlay.AppClipConfiguration(position: .bottom)
+    }
+#endif
+  }
+
+  private var bodyA: some View {
     ScrollView { VStack(alignment: .leading) {
       Text(example.title).font(.largeTitle).padding(.horizontal)
       Text(example.subtitle).italic().padding(.horizontal)
@@ -28,6 +44,26 @@ struct ExampleDetail: View {
         }
         .padding()
       }
+
+      HStack {
+        Link(destination: example.sourceCodeUrl) {
+          HStack {
+            Text("Source code")
+            Image(systemName: "chevron.left.slash.chevron.right")
+          }
+        }
+#if !os(macOS)
+        Button(action: {
+          presentingAppStoreOverlay.toggle()
+        }) {
+          HStack {
+            Text("More examples")
+            Image(systemName: "plus.app")
+          }
+        }
+#endif
+      }
+      .padding(.horizontal)
 
       Divider()
 
