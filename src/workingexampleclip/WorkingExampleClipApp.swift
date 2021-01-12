@@ -23,23 +23,41 @@ struct WorkingExampleClipApp: App {
       .onChange(of: appData.examples) { _ in
         guard
           let name = temporaryName,
-          let examples = appData.examples,
-          let example = examples.first(where: { $0.slug == name })
+          let examples = appData.examples
         else {
           return
         }
-        temporaryName = nil
-        selectedExample = example
+
+        if name == "latest", let example = examples.first {
+          temporaryName = nil
+          selectedExample = example
+        } else if let example = examples.first(where: { $0.slug == name }) {
+          temporaryName = nil
+          selectedExample = example
+        } else {
+          return
+        }
       }
       .onContinueUserActivity(NSUserActivityTypeBrowsingWeb) { userActivity in
         guard let url = userActivity.webpageURL else {
           return
         }
         let pathComponents = url.pathComponents
-        guard pathComponents.count == 3 else {
+        guard pathComponents.count > 1 else {
           return
         }
-        temporaryName = pathComponents[2]
+        let name = pathComponents.count > 2 ? pathComponents[2] : pathComponents[1]
+        if let examples = appData.examples {
+          if name == "latest", let example = examples.first {
+            selectedExample = example
+          } else if let example = examples.first(where: { $0.slug == name }) {
+            selectedExample = example
+          } else {
+            temporaryName = name
+          }
+        } else {
+          temporaryName = name
+        }
       }
     }
   }

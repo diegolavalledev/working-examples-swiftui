@@ -89,6 +89,13 @@ struct ExampleDetail: View {
 
       Spacer()
     } }
+    .onOpenURL { _ in
+      // Called from widget and from an example's web page
+      if present {
+        // If running previous example, dismiss sheet
+        present.toggle()
+      }
+    }
     .onAppear {
       exampleTask = example.detailsPublisher.assign(to: \.exampleDetails, on: self)
       imageTask = example.iconImage.publisher.assign(to: \.iconImage, on: self)
