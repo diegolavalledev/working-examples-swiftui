@@ -10,5 +10,11 @@ struct WorkingExamplesApp: App {
       .environmentObject(appData)
       .accentColor(Color("AccentColor"))
     }
+
+    #if os(macOS)
+      Settings {
+        SettingsView()
+      }
+    #endif
   }
 }

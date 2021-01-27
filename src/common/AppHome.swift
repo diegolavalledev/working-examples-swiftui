@@ -2,20 +2,23 @@ import SwiftUI
 
 struct AppHome: View {
 
-  @State var tab = 0
+  enum Tabs: Hashable {
+    case posts, examples
+  }
+
+  @State var tab = Tabs.posts
+
   var body: some View {
     TabView(selection: $tab) {
       PostsHome()
-      .tag(0)
+      .tag(Tabs.posts)
       .tabItem {
-        Image(systemName: "newspaper.fill")
-        Text("Swift You and I")
+        Label("Swift You and I", systemImage: "newspaper.fill")
       }
       ExamplesHome()
-      .tag(1)
+      .tag(Tabs.examples)
       .tabItem {
-        Image(systemName: "hand.tap.fill")
-        Text("Working Examples")
+        Label("Working Examples", systemImage: "hand.tap.fill")
       }
     }
     .onContinueUserActivity(NSUserActivityTypeBrowsingWeb) { userActivity in
@@ -28,7 +31,7 @@ struct AppHome: View {
       }
       let section = pathComponents[1]
       if section == "examples" {
-        tab = 1
+        tab = .examples
       }
     }
     .onOpenURL { url in
@@ -38,7 +41,7 @@ struct AppHome: View {
       }
       let section = pathComponents[1]
       if section == "examples" {
-        tab = 1
+        tab = .examples
       }
     }
   }

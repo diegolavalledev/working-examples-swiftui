@@ -41,8 +41,13 @@ class AppData: ObservableObject {
 
   /// Creates an instanse of the store which fetches stations immediatelly
   init() {
-    // We fetch all airports on launch
+    // We fetch everything on launch
     postsTask = PostModel.postsPublisher.assign(to: \.posts, on: self)
+    examplesTask = examplesPublisher.assign(to: \.examples, on: self)
+  }
+
+  func reloadExamples() {
+    examples = nil
     examplesTask = examplesPublisher.assign(to: \.examples, on: self)
   }
 }
