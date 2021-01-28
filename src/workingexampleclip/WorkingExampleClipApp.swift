@@ -26,8 +26,8 @@ struct WorkingExampleClipApp: App {
         guard let url = temporaryUrl, let examples = appData.examples, let example = examples.findByUrl(url) else {
           return
         }
-
-        temporaryName = nil
+        
+        temporaryUrl = nil
         selectedExample = example
       }
       .onContinueUserActivity(NSUserActivityTypeBrowsingWeb) { userActivity in
@@ -36,11 +36,8 @@ struct WorkingExampleClipApp: App {
           return
         }
 
-        if let examples = appData.examples, let example = examples.findByUrl(url) {
-          selectedExample = example
-        } else {
-          temporaryUrl = url
-        }
+        appData.reloadExamples()
+        temporaryUrl = url
       }
     }
   }

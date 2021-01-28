@@ -10,8 +10,8 @@ class AppData: ObservableObject {
 #endif
 
   static let url = URL(string: "\(baseUrl)examples/index.json")!
-
-  @Published var posts = [PostModel]?.none
+  
+  // TODO: Move to examplesPublisher publisher
   @Published var examples = [ExampleModel]?.none {
     didSet {
       if
@@ -25,29 +25,10 @@ class AppData: ObservableObject {
   }
 
   // Ongoing data tasks
-  private var postsTask: AnyCancellable?
   private var examplesTask: AnyCancellable?
-  
-  // Data task publisher for fetching all airports (stations)
-  private var examplesPublisher: AnyPublisher<[ExampleModel]?, Never> {
-    URLSession.shared
-    .dataTaskPublisher(for: AppData.url)
-    .map(\.data)
-    .decode(type: [ExampleModel]?.self, decoder: ExampleModel.decoder)
-    .replaceError(with: nil)
-    .receive(on: RunLoop.main)
-    .eraseToAnyPublisher()
-  }
-
-  /// Creates an instanse of the store which fetches stations immediatelly
-  init() {
-    // We fetch everything on launch
-    postsTask = PostModel.postsPublisher.assign(to: \.posts, on: self)
-    examplesTask = examplesPublisher.assign(to: \.examples, on: self)
-  }
 
   func reloadExamples() {
     examples = nil
-    examplesTask = examplesPublisher.assign(to: \.examples, on: self)
+    examplesTask = ExampleModel.examplesPublisher.assign(to: \.examples, on: self)
   }
 }

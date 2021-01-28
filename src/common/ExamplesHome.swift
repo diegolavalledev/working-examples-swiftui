@@ -5,7 +5,7 @@ struct ExamplesHome: View {
 
   @EnvironmentObject var appData: AppData
   @State var selectedExample = ExampleModel?.none
-  @State var temporaryName = String?.none
+  @State var temporaryUrl = URL?.none
 
   var body: some View {
     NavigationView {
@@ -16,44 +16,33 @@ struct ExamplesHome: View {
           ProgressView("Loading examples…")
         }
       }
-      .navigationTitle("Working Examples")
+      .toolbar {
+        ToolbarItem(placement: .principal) {
+          Text("Working Examples").font(.largeTitle)
+        }
+      }
       Text("Select an example from the side-bar to view its details.")
     }
+    .onAppear {
+      appData.reloadExamples()
+    }
     .onChange(of: appData.examples) { _ in
-      guard let name = temporaryName else {
+      guard let url = temporaryUrl else {
         return
       }
-      temporaryName = nil
-      guard let example = appData.examples?.findBySlug(name) else {
+
+      temporaryUrl = nil
+      guard let example = appData.examples?.findByUrl(url) else {
         return
       }
+
       selectedExample = example
     }
-    .onContinueUserActivity(NSUserActivityTypeBrowsingWeb) { userActivity in
-      guard let url = userActivity.webpageURL else {
-        return
-      }
-      let pathComponents = url.pathComponents
-      guard pathComponents.count == 3 else {
-        return
-      }
-      let name = pathComponents[2]
-      if let example = appData.examples?.findBySlug(name) {
-        selectedExample = example
-      } else {
-        temporaryName = name
-      }
-    }
     .onOpenURL { url in
-      let pathComponents = url.pathComponents
-      guard pathComponents.count == 3 else {
-        return
-      }
-      let name = pathComponents[2]
-      if let example = appData.examples?.findBySlug(name) {
+      if let example = appData.examples?.findByUrl(url) {
         selectedExample = example
       } else {
-        temporaryName = name
+        temporaryUrl = url
       }
     }
   }

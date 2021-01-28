@@ -91,10 +91,11 @@ struct ExampleDetail: View {
     } }
     .onOpenURL { _ in
       // Called from widget and from an example's web page
-      if present {
-        // If running previous example, dismiss sheet
-        present.toggle()
-      }
+      // If running previous example, dismiss sheet
+      present = false
+    }
+    .onContinueUserActivity(NSUserActivityTypeBrowsingWeb) { _ in
+      present = false
     }
     .onAppear {
       exampleTask = example.detailsPublisher.assign(to: \.exampleDetails, on: self)

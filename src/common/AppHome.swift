@@ -21,28 +21,14 @@ struct AppHome: View {
         Label("Working Examples", systemImage: "hand.tap.fill")
       }
     }
-    .onContinueUserActivity(NSUserActivityTypeBrowsingWeb) { userActivity in
-      guard let url = userActivity.webpageURL else {
-        return
-      }
-      let pathComponents = url.pathComponents
-      guard pathComponents.count == 3 else {
-        return
-      }
-      let section = pathComponents[1]
-      if section == "examples" {
-        tab = .examples
-      }
-    }
     .onOpenURL { url in
+
       let pathComponents = url.pathComponents
-      guard pathComponents.count == 3 else {
+      guard pathComponents.count == 3, pathComponents[1] == "examples" else {
         return
       }
-      let section = pathComponents[1]
-      if section == "examples" {
-        tab = .examples
-      }
+
+      tab = .examples
     }
   }
 }
