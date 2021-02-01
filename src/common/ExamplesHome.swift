@@ -5,7 +5,7 @@ struct ExamplesHome: View {
 
   @EnvironmentObject var appData: AppData
   @State var selectedExample = ExampleModel?.none
-  @State var temporaryUrl = URL?.none
+  @State var requestedUrl = URL?.none
 
   var body: some View {
     NavigationView {
@@ -24,26 +24,35 @@ struct ExamplesHome: View {
       Text("Select an example from the side-bar to view its details.")
     }
     .onAppear {
-      appData.reloadExamples()
+      if appData.examples == nil {
+        appData.reloadExamples()
+      }
     }
+    .onChange(of: selectedExample) { _ in } // Work-around for onOpenURL/onContinueUserActivity bug
     .onChange(of: appData.examples) { _ in
-      guard let url = temporaryUrl else {
+
+      guard let examples = appData.examples, let url = requestedUrl else {
         return
       }
 
-      temporaryUrl = nil
-      guard let example = appData.examples?.findByUrl(url) else {
+      requestedUrl = nil
+      guard let example = examples.findByUrl(url) else {
         return
       }
 
       selectedExample = example
     }
-    .onOpenURL { url in
-      if let example = appData.examples?.findByUrl(url) {
-        selectedExample = example
-      } else {
-        temporaryUrl = url
-      }
+    .onOpenURL(perform: handle)
+    .onContinueUserActivity(NSUserActivityTypeBrowsingWeb) {
+      if let url = $0.webpageURL { handle(url) }
+    }
+  }
+
+  func handle(_ url: URL) {
+    if let example = appData.examples?.findByUrl(url) {
+      selectedExample = example
+    } else {
+      requestedUrl = url
     }
   }
 }

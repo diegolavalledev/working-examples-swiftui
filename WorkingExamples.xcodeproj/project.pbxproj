@@ -177,6 +177,7 @@
 		9D8BF00B2580CFBF00B01A77 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		9D8BF01E2580D5AA00B01A77 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		9DE6D5AA259A394F009B06F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; name = en; path = en.lproj/workingexamplewidget.intentdefinition; sourceTree = "<group>"; };
+		9DFC3C2F25C82CDC00535253 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; name = Base; path = Base.lproj/workingexamplewidget.intentdefinition; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -658,6 +659,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				9DE6D5AA259A394F009B06F8 /* en */,
+				9DFC3C2F25C82CDC00535253 /* Base */,
 			);
 			name = workingexamplewidget.intentdefinition;
 			sourceTree = "<group>";

@@ -53,7 +53,7 @@
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "_XCAppClipURL"
-            value = "https://swiftui.diegolavalle.com/examples/moonshot/"
+            value = "https://swiftui.diegolavalle.com/examples/thats-a-wrap/"
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>

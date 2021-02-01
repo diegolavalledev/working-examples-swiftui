@@ -7,6 +7,7 @@ struct AppHome: View {
   }
 
   @State var tab = Tabs.posts
+  @State var requestedUrl = URL?.none
 
   var body: some View {
     TabView(selection: $tab) {
@@ -15,21 +16,28 @@ struct AppHome: View {
       .tabItem {
         Label("Swift You and I", systemImage: "newspaper.fill")
       }
-      ExamplesHome()
+      ExamplesHome(requestedUrl: requestedUrl)
       .tag(Tabs.examples)
       .tabItem {
         Label("Working Examples", systemImage: "hand.tap.fill")
       }
     }
-    .onOpenURL { url in
-
-      let pathComponents = url.pathComponents
-      guard pathComponents.count == 3, pathComponents[1] == "examples" else {
-        return
+    .onOpenURL(perform: handle)
+    .onContinueUserActivity(NSUserActivityTypeBrowsingWeb) {
+      if let url = $0.webpageURL {
+          handle(url)
       }
-
-      tab = .examples
     }
+  }
+
+  func handle(_ url: URL) {
+    let pathComponents = url.pathComponents
+    guard pathComponents.count == 3, pathComponents[1] == "examples" else {
+      return
+    }
+
+    requestedUrl = url
+    tab = .examples
   }
 }
 

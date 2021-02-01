@@ -89,14 +89,8 @@ struct ExampleDetail: View {
 
       Spacer()
     } }
-    .onOpenURL { _ in
-      // Called from widget and from an example's web page
-      // If running previous example, dismiss sheet
-      present = false
-    }
-    .onContinueUserActivity(NSUserActivityTypeBrowsingWeb) { _ in
-      present = false
-    }
+    .onOpenURL { _ in handle() }
+    .onContinueUserActivity(NSUserActivityTypeBrowsingWeb) { _ in handle() }
     .onAppear {
       exampleTask = example.detailsPublisher.assign(to: \.exampleDetails, on: self)
       imageTask = example.iconImage.publisher.assign(to: \.iconImage, on: self)
@@ -104,6 +98,12 @@ struct ExampleDetail: View {
     .sheet(isPresented: $present) {
       example.view
     }
+  }
+
+  func handle() {
+    // Called from widget and from an example's web page
+    // If running previous example, dismiss sheet
+    present = false
   }
 }
 

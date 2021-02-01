@@ -6,19 +6,11 @@ struct ExampleList: View {
   let examples: [ExampleModel]
   @Binding var selectedExample: ExampleModel?
 
-  var exampleDetail: some View {
-    Group {
-      if let example = selectedExample {
-        ExampleDetail(example: example)
-      }
-    }
-  }
-
   var body: some View {
     List {
       ForEach(examples) { example in
         NavigationLink(
-          destination: exampleDetail,
+          destination: ExampleDetail(example: example),
           tag: example,
           selection: $selectedExample,
           label: {
