@@ -26,12 +26,11 @@ struct WorkingExampleClipApp: App {
 
         guard
           let url = temporaryUrl,
-          let examples = appData.examples,
-          let example = examples.findByUrl(url)
+          let examples = appData.examples
         else { return }
         
         temporaryUrl = nil
-        selectedExample = example
+        selectedExample = examples.findByUrl(url) ?? examples.randomElement()
       }
       .onChange(of: selectedExample) { _ in } // Work-around for onOpenURL/onContinueUserActivity bug
       .onContinueUserActivity(NSUserActivityTypeBrowsingWeb) { userActivity in
