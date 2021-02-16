@@ -261,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				62819CAB2540BF09009AD44D /* WorkingExampleWidget.swift */,
+				9DE6D5AB259A394F009B06F8 /* workingexamplewidget.intentdefinition */,
 				62819CAE2540BF0A009AD44D /* Assets.xcassets */,
 			);
 			path = workingexamplewidget;
@@ -281,7 +282,6 @@
 		628D2BE82539FAC6007AF75E /* common */ = {
 			isa = PBXGroup;
 			children = (
-				9DE6D5AB259A394F009B06F8 /* workingexamplewidget.intentdefinition */,
 				620047BD25402DB10081B773 /* AppData.swift */,
 				6221B709254840CA00AC70B2 /* AppHome.swift */,
 				6221B6CD2541F0E000AC70B2 /* ExampleDetail.swift */,
