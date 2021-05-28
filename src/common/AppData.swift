@@ -16,7 +16,7 @@ class AppData: ObservableObject {
     didSet {
       if
         let examples = examples,
-        let userDefaults = UserDefaults(suiteName: "group.com.diegolavalle.swiftui.app"),
+        let userDefaults = UserDefaults(suiteName: "group.com.diegolavalle.WorkingExamples"),
         let examplesJson = try? JSONEncoder().encode(examples)
       {
         userDefaults.setValue(examplesJson, forKey: "examples")

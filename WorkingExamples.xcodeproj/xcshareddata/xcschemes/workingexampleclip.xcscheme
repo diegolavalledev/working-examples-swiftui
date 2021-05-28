@@ -53,7 +53,7 @@
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "_XCAppClipURL"
-            value = "https://swiftui.diegolavalle.com"
+            value = "https://swiftui.diegolavalle.com/examples/loopy-carousel"
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>

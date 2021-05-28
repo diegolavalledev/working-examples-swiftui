@@ -19,7 +19,7 @@ struct Provider: IntentTimelineProvider {
     let currentDate = Date()
     let example: ExampleModel
     if
-      let userDefaults = UserDefaults(suiteName: "group.com.diegolavalle.swiftui.app"),
+      let userDefaults = UserDefaults(suiteName: "group.com.diegolavalle.WorkingExamples"),
       let examplesData = userDefaults.object(forKey: "examples") as? Data,
       let examples = try? JSONDecoder().decode([ExampleModel].self, from: examplesData),
       examples.count > 1 {
