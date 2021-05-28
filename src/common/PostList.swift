@@ -14,31 +14,24 @@ struct PostList: View {
   }
 
   var body: some View {
-    ScrollView(.vertical) {
-      VStack(alignment: .leading) {
-        ForEach(posts) { post in
-          VStack(alignment: .leading) {
-              Text("\(post.date, formatter: .postDate)")
-              .font(.footnote)
-              .foregroundColor(Color("secondaryLabel"))
-              .frame(maxWidth: .infinity, alignment: .trailing)
-              .padding(.bottom)
-
+    List {
+      ForEach(posts) { post in
+        NavigationLink(
+          destination: postDetail,
+          tag: post,
+          selection: $selectedPost
+        ) {
+          HStack {
+            VStack(alignment: .leading) {
               Text("\(post.title)").font(.headline)
-              Text("\(post.subtitle)").font(.subheadline).padding(.vertical)
-              NavigationLink(
-                destination: postDetail,
-                tag: post,
-                selection: $selectedPost,
-                label: {
-                  Text("Read More")
-                  .frame(maxWidth: .infinity, alignment: .trailing)
-                }
-              )
-              Divider()
-          }.padding()
+              Text("\(post.subtitle)").font(.subheadline)
+            }
+            Spacer()
+            Text("\(post.date, formatter: .postDate)")
+              .font(.caption)
+              .foregroundColor(Color("secondaryLabel"))
+          }
         }
-        Spacer()
       }
     }
   }

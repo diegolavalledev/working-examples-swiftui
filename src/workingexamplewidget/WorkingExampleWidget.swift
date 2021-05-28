@@ -57,10 +57,12 @@ struct WorkingExampleWidgetEntryView : View {
       }
     }
     .padding(.horizontal)
-    .foregroundColor(.white)
-    .edgesIgnoringSafeArea(.all)
     .frame(maxWidth: .infinity)
-    .background(Color.accentColor)
+    .background(
+      LinearGradient(gradient: Gradient(colors: [Color(.secondarySystemBackground), Color.accentColor]), startPoint: .topLeading, endPoint: .bottomTrailing)
+    )
+    .edgesIgnoringSafeArea(.all)
+    .accentColor(.blue)
   }
   
   var body: some View {
@@ -94,7 +96,12 @@ struct WorkingExampleWidget: Widget {
 
 struct WorkingExampleWidget_Previews: PreviewProvider {
   static var previews: some View {
-    WorkingExampleWidgetEntryView(entry: SimpleEntry(date: Date(), example: .sample, configuration: ConfigurationIntent()))
+    Group {
+      WorkingExampleWidgetEntryView(entry: SimpleEntry(date: Date(), example: .sample, configuration: ConfigurationIntent()))
       .previewContext(WidgetPreviewContext(family: .systemSmall))
+      WorkingExampleWidgetEntryView(entry: SimpleEntry(date: Date(), example: .sample, configuration: ConfigurationIntent()))
+      .previewContext(WidgetPreviewContext(family: .systemSmall))
+      .environment(\.colorScheme, .dark)
+    }
   }
 }
